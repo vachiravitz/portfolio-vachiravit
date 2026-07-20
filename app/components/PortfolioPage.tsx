@@ -7,9 +7,13 @@ import {
   ArrowRight,
   ArrowUp,
   ArrowUpRight,
+  AtSign,
   Award,
   Braces,
   BriefcaseBusiness,
+  Building2,
+  CalendarDays,
+  Camera,
   CheckCircle2,
   Code2,
   ExternalLink,
@@ -17,7 +21,6 @@ import {
   GraduationCap,
   Mail,
   MapPin,
-  MessageCircle,
   Sparkles,
   Users,
   Workflow,
@@ -33,6 +36,7 @@ import {
   profile,
   projects,
   skillGroups,
+  workExperience,
 } from "../data/portfolio";
 
 const detailIcons: Record<string, LucideIcon> = {
@@ -45,8 +49,7 @@ const detailIcons: Record<string, LucideIcon> = {
 const socialIcons: Record<string, LucideIcon> = {
   Github: Code2,
   Linkedin: BriefcaseBusiness,
-  MessageCircle,
-  Facebook: Users,
+  Twitter: AtSign,
 };
 
 function Hero() {
@@ -67,8 +70,8 @@ function Hero() {
           </div>
           <p className="hero-kicker">{profile.role}</p>
           <h1>
-            Designing systems
-            <span>that feel human.</span>
+            {profile.headlineLine1}
+            <span>{profile.headlineLine2}</span>
           </h1>
           <p className="hero-intro">{profile.intro}</p>
           <div className="hero-actions">
@@ -76,7 +79,7 @@ function Hero() {
               View projects <ArrowDown size={17} />
             </a>
             <a className="button button-secondary" href={profile.resumeUrl} download>
-              Download résumé <ArrowDownToLine size={17} />
+              Download resume <ArrowDownToLine size={17} />
             </a>
           </div>
         </motion.div>
@@ -87,16 +90,22 @@ function Hero() {
           animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="portrait-card" role="img" aria-label={`Profile placeholder for ${profile.name}`}>
-            <div className="portrait-grid" />
-            <div className="portrait-orbit orbit-one" />
-            <div className="portrait-orbit orbit-two" />
-            <div className="portrait-core">
-              <span>{profile.initials}</span>
-            </div>
-            <div className="portrait-note note-top">CS / 2026</div>
+          <div className="portrait-card">
+            {profile.photo ? (
+              <img className="profile-photo" src={profile.photo} alt={`${profile.name} profile`} />
+            ) : (
+              <>
+                <div className="portrait-grid" />
+                <div className="portrait-orbit orbit-one" />
+                <div className="portrait-orbit orbit-two" />
+                <div className="portrait-core" role="img" aria-label={`Profile placeholder for ${profile.name}`}>
+                  <span>{profile.initials}</span>
+                </div>
+              </>
+            )}
+            <div className="portrait-note note-top">CS / PORTFOLIO</div>
             <div className="portrait-note note-bottom">
-              <span className="status-dot" /> BASED IN BKK
+              <span className="status-dot" /> {profile.location.toUpperCase()}
             </div>
           </div>
         </motion.div>
@@ -109,7 +118,7 @@ function Hero() {
         transition={{ duration: 0.8, delay: 0.45 }}
       >
         <div><span>BASED IN</span><strong>{profile.location}</strong></div>
-        <div><span>CURRENTLY EXPLORING</span><strong>AI × Human Experience</strong></div>
+        <div><span>CURRENTLY EXPLORING</span><strong>{profile.currentFocus}</strong></div>
         <div><span>STATUS</span><strong className="status-text">Ready to build</strong></div>
         <a href="#about" aria-label="Scroll to about section"><ArrowDown size={18} /></a>
       </motion.div>
@@ -121,7 +130,7 @@ function About() {
   return (
     <section id="about" className="section-shell content-section">
       <MotionReveal>
-        <SectionHeading index="01" eyebrow="About me" title="A thoughtful builder with a curious mind." />
+        <SectionHeading index="01" eyebrow="About me / เกี่ยวกับฉัน" title="A thoughtful builder with a curious mind." />
       </MotionReveal>
       <div className="about-grid">
         <MotionReveal className="about-statement">
@@ -131,6 +140,20 @@ function About() {
         <MotionReveal className="about-content" delay={0.08}>
           <div className="about-copy">
             {about.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <div className="education-list">
+            {about.education.map((education) => (
+              <article className="education-card" key={`${education.school}-${education.degree}`}>
+                <GraduationCap size={21} />
+                <div>
+                  <span>EDUCATION / การศึกษา</span>
+                  <h3>{education.degree}</h3>
+                  <strong>{education.school}</strong>
+                  <small>{education.period}</small>
+                  <p>{education.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
           <div className="detail-grid">
             {about.details.map((detail) => {
@@ -145,39 +168,6 @@ function About() {
             })}
           </div>
         </MotionReveal>
-      </div>
-    </section>
-  );
-}
-
-function Skills() {
-  return (
-    <section id="skills" className="section-shell content-section">
-      <MotionReveal>
-        <SectionHeading
-          index="02"
-          eyebrow="Capabilities"
-          title="Tools I use to move ideas forward."
-          description="A flexible toolkit grounded in strong fundamentals—always expanding with each problem I solve."
-        />
-      </MotionReveal>
-      <div className="skills-grid">
-        {skillGroups.map((group, groupIndex) => (
-          <MotionReveal key={group.title} delay={(groupIndex % 3) * 0.06}>
-            <article className="skill-group">
-              <header>
-                <span>{group.index}</span>
-                <Code2 size={19} />
-              </header>
-              <h3>{group.title}</h3>
-              <ul>
-                {group.skills.map((skill) => (
-                  <li key={skill}><CheckCircle2 size={14} />{skill}</li>
-                ))}
-              </ul>
-            </article>
-          </MotionReveal>
-        ))}
       </div>
     </section>
   );
@@ -223,33 +213,37 @@ function Projects() {
     <section id="projects" className="section-shell content-section">
       <MotionReveal>
         <SectionHeading
-          index="03"
-          eyebrow="Selected work"
+          index="02"
+          eyebrow="Projects / ผลงาน"
           title="Projects built with purpose."
-          description="A selection of work where engineering decisions support a clear, useful experience."
+          description="Coursework and personal projects, with the tools, responsibilities, and outcomes made clear."
         />
       </MotionReveal>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <MotionReveal
-            key={project.title}
-            className={project.featured ? "project-featured" : ""}
-            delay={(index % 2) * 0.08}
-          >
+          <MotionReveal key={project.title} className={project.featured ? "project-featured" : ""} delay={(index % 2) * 0.08}>
             <motion.article className="project-card" whileHover={{ y: -6 }} transition={{ duration: 0.24 }}>
-              <ProjectVisual tone={project.tone} index={index} />
+              {project.image ? (
+                <div className={`project-visual visual-${project.tone}`}>
+                  <img className="content-image" src={project.image} alt={`Screenshot of ${project.title}`} loading="lazy" />
+                  <span className="visual-index">0{index + 1}</span>
+                </div>
+              ) : <ProjectVisual tone={project.tone} index={index} />}
               <div className="project-body">
-                <div className="project-number">PROJECT / {project.number}</div>
+                <div className="project-number">PROJECT / {project.number} · {project.course}</div>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
+                <div className="project-facts">
+                  <div><span>MY CONTRIBUTION</span><p>{project.responsibility}</p></div>
+                  <div><span>RESULT / OUTCOME</span><p>{project.outcome}</p></div>
+                </div>
                 <ul className="tag-list">
                   {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
                 </ul>
                 <div className="project-links">
-                  <a href={project.github} target="_blank" rel="noreferrer"><Code2 size={16} />GitHub</a>
-                  {project.demo ? (
-                    <a href={project.demo} target="_blank" rel="noreferrer">Live demo<ArrowUpRight size={16} /></a>
-                  ) : <span>Case study soon</span>}
+                  {project.github ? <a href={project.github} target="_blank" rel="noreferrer"><Code2 size={16} />GitHub</a> : null}
+                  {project.demo ? <a href={project.demo} target="_blank" rel="noreferrer">Live demo<ArrowUpRight size={16} /></a> : null}
+                  {project.figma ? <a href={project.figma} target="_blank" rel="noreferrer">Figma<ExternalLink size={15} /></a> : null}
                 </div>
               </div>
             </motion.article>
@@ -260,29 +254,71 @@ function Projects() {
   );
 }
 
-function Certificates() {
+function Skills() {
   return (
-    <section id="certificates" className="section-shell content-section">
+    <section id="skills" className="section-shell content-section">
       <MotionReveal>
-        <SectionHeading index="04" eyebrow="Learning" title="Proof of progress, not the finish line." />
+        <SectionHeading
+          index="03"
+          eyebrow="Technical skills / ทักษะ"
+          title="Tools I use to move ideas forward."
+          description="Proficiency levels are self-assessed and can be updated as skills grow."
+        />
       </MotionReveal>
-      <div className="certificate-grid">
-        {certificates.map((certificate, index) => (
-          <MotionReveal key={certificate.title} delay={index * 0.06}>
-            <motion.article className="certificate-card" whileHover={{ scale: 1.015 }}>
-              <div className={`certificate-art visual-${certificate.tone}`}>
-                <span className="certificate-code">{certificate.code}</span>
-                <Award size={44} strokeWidth={1.2} />
-                <div className="certificate-lines"><i /><i /><i /></div>
+      <div className="skills-legend"><span>FOUNDATION</span><span>WORKING KNOWLEDGE</span><span>CONFIDENT</span></div>
+      <div className="skills-grid">
+        {skillGroups.map((group, groupIndex) => (
+          <MotionReveal key={group.title} delay={(groupIndex % 3) * 0.06}>
+            <article className="skill-group">
+              <header><span>{group.index}</span><Code2 size={19} /></header>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.skills.map((skill) => (
+                  <li key={skill.name}>
+                    <div className="skill-topline"><span>{skill.name}</span><strong>{skill.level}%</strong></div>
+                    <div className="skill-track"><i style={{ width: `${skill.level}%` }} /></div>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </MotionReveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  return (
+    <section id="experience" className="section-shell content-section">
+      <MotionReveal>
+        <SectionHeading
+          index="04"
+          eyebrow="Work experience / ประสบการณ์"
+          title="Experience that shaped how I work."
+          description="Internships, part-time work, freelance work, or substantial team projects can all live here."
+        />
+      </MotionReveal>
+      <div className="experience-list">
+        {workExperience.map((experience, index) => (
+          <MotionReveal key={`${experience.company}-${experience.role}`} delay={index * 0.06}>
+            <article className="experience-card">
+              <div className="experience-side">
+                <span>0{index + 1}</span>
+                <BriefcaseBusiness size={21} />
               </div>
-              <div className="certificate-body">
-                <div><span>{certificate.issuer}</span><span>{certificate.date}</span></div>
-                <h3>{certificate.title}</h3>
-                <button type="button" aria-label={`View ${certificate.title}`}>
-                  View credential <ExternalLink size={15} />
-                </button>
+              <div className="experience-main">
+                <div className="experience-heading">
+                  <div><span>{experience.company}</span><h3>{experience.role}</h3></div>
+                  <div className="experience-meta"><span><CalendarDays size={14} />{experience.period}</span><span><MapPin size={14} />{experience.location}</span></div>
+                </div>
+                <p>{experience.summary}</p>
+                <ul className="responsibility-list">
+                  {experience.responsibilities.map((item) => <li key={item}><CheckCircle2 size={15} />{item}</li>)}
+                </ul>
+                <ul className="tag-list">{experience.technologies.map((tag) => <li key={tag}>{tag}</li>)}</ul>
               </div>
-            </motion.article>
+            </article>
           </MotionReveal>
         ))}
       </div>
@@ -296,21 +332,55 @@ function Activities() {
       <MotionReveal>
         <SectionHeading
           index="05"
-          eyebrow="Beyond the screen"
+          eyebrow="Activities & contributions / กิจกรรม"
           title="Learning happens everywhere."
-          description="Teams, communities, and time-boxed challenges are where technical skills become real-world skills."
+          description="Competitions, clubs, volunteer work, seminars, and the impact or role in each activity."
         />
       </MotionReveal>
-      <div className="activity-list">
+      <div className="activity-grid">
         {activities.map((activity, index) => (
-          <MotionReveal key={activity.title} delay={index * 0.05}>
-            <article className="activity-row">
-              <span className="activity-index">0{index + 1}</span>
-              <div className="activity-meta"><strong>{activity.type}</strong><span>{activity.date}</span></div>
-              <h3>{activity.title}</h3>
-              <p>{activity.description}</p>
-              <ArrowUpRight size={20} />
+          <MotionReveal key={activity.title} delay={index * 0.06}>
+            <article className="activity-card">
+              <div className={`activity-visual visual-${index % 2 === 0 ? "blue" : "violet"}`}>
+                {activity.image ? <img className="content-image" src={activity.image} alt={activity.title} loading="lazy" /> : <><Camera size={28} /><span>ADD ACTIVITY PHOTO</span></>}
+              </div>
+              <div className="activity-body">
+                <div className="activity-meta"><strong>{activity.type}</strong><span>{activity.date}</span></div>
+                <h3>{activity.title}</h3>
+                <span className="activity-org"><Building2 size={14} />{activity.organization}</span>
+                <p>{activity.description}</p>
+                <div className="activity-detail"><span>ROLE</span><strong>{activity.role}</strong></div>
+                <div className="activity-detail"><span>RESULT</span><strong>{activity.result}</strong></div>
+              </div>
             </article>
+          </MotionReveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Certificates() {
+  return (
+    <section id="certificates" className="section-shell content-section">
+      <MotionReveal>
+        <SectionHeading index="06" eyebrow="Certifications / ใบรับรอง" title="Proof of progress, not the finish line." />
+      </MotionReveal>
+      <div className="certificate-grid">
+        {certificates.map((certificate, index) => (
+          <MotionReveal key={certificate.title} delay={index * 0.06}>
+            <motion.article className="certificate-card" whileHover={{ scale: 1.015 }}>
+              <div className={`certificate-art visual-${certificate.tone}`}>
+                {certificate.image ? <img className="content-image" src={certificate.image} alt={certificate.title} loading="lazy" /> : <><span className="certificate-code">{certificate.code}</span><Award size={44} strokeWidth={1.2} /><div className="certificate-lines"><i /><i /><i /></div></>}
+              </div>
+              <div className="certificate-body">
+                <div><span>{certificate.issuer}</span><span>{certificate.date}</span></div>
+                <h3>{certificate.title}</h3>
+                {certificate.credentialUrl ? (
+                  <a href={certificate.credentialUrl} target="_blank" rel="noreferrer">View credential <ExternalLink size={15} /></a>
+                ) : <span className="credential-missing">Credential link coming soon</span>}
+              </div>
+            </motion.article>
           </MotionReveal>
         ))}
       </div>
@@ -324,22 +394,17 @@ function Contact() {
       <MotionReveal>
         <div className="contact-panel">
           <div className="contact-grid" />
-          <div className="contact-topline"><span>06 / CONTACT</span><span className="status-text">Available for a conversation</span></div>
+          <div className="contact-topline"><span>07 / CONTACT</span><span className="status-text">Available for a conversation</span></div>
           <div className="contact-main">
             <p>Have an idea, an opportunity, or just want to say hello?</p>
             <h2>Let&apos;s make<br /><span>something meaningful.</span></h2>
-            <a className="contact-email" href={`mailto:${profile.email}`}>
-              <Mail size={20} />{profile.email}<ArrowRight size={20} />
-            </a>
+            <a className="contact-email" href={`mailto:${profile.email}`}><Mail size={20} />{profile.email}<ArrowRight size={20} /></a>
+            {profile.phone ? <a className="contact-phone" href={`tel:${profile.phone}`}>{profile.phone}</a> : null}
           </div>
           <div className="social-grid">
             {profile.socials.map((social) => {
               const Icon = socialIcons[social.icon] || ExternalLink;
-              return (
-                <a key={social.label} href={social.href} target="_blank" rel="noreferrer">
-                  <Icon size={18} /><span>{social.label}</span><ArrowUpRight size={16} />
-                </a>
-              );
+              return <a key={social.label} href={social.href} target="_blank" rel="noreferrer"><Icon size={18} /><span>{social.label}</span><ArrowUpRight size={16} /></a>;
             })}
           </div>
         </div>
@@ -365,10 +430,11 @@ export function PortfolioPage() {
       <main>
         <Hero />
         <About />
-        <Skills />
         <Projects />
-        <Certificates />
+        <Skills />
+        <Experience />
         <Activities />
+        <Certificates />
         <Contact />
       </main>
       <Footer />

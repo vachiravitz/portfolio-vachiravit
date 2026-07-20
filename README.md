@@ -1,4 +1,6 @@
-# vinext-starter
+# Portfolio Website
+
+เว็บไซต์ Portfolio สำหรับนักศึกษา Computer Science ดูวิธีแก้ข้อมูลทั้งหมดได้ที่ [CONTENT_GUIDE.md](./CONTENT_GUIDE.md)
 
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and

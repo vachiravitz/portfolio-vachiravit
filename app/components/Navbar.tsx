@@ -64,7 +64,7 @@ export function Navbar() {
               </a>
             ))}
             <a href="#contact" onClick={() => setOpen(false)}>
-              <span>06</span>Contact
+              <span>0{navItems.length + 1}</span>Contact
             </a>
           </motion.nav>
         ) : null}
