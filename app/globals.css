@@ -720,8 +720,13 @@ button {
 .responsibility-list svg { flex: 0 0 auto; margin-top: 2px; color: #66748b; }
 
 .activity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.activity-card { height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: transparent; }
+.activity-card { position: relative; height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: transparent; transition: transform .38s cubic-bezier(.2,.75,.25,1), border-color .3s ease, box-shadow .38s ease; }
 .activity-visual { position: relative; display: flex; flex-direction: column; gap: 10px; align-items: center; justify-content: center; height: 190px; overflow: hidden; border-bottom: 1px solid var(--line); color: rgba(255,255,255,.43); }
+.activity-visual > .content-image { transition: transform .65s cubic-bezier(.2,.75,.25,1), filter .35s ease; will-change: transform; }
+@media (hover: hover) and (pointer: fine) {
+  .activity-card:hover { z-index: 2; transform: translateY(-7px) scale(1.025); border-color: rgba(70,105,180,.3); box-shadow: 0 26px 64px rgba(24,48,104,.14); }
+  .activity-card:hover .activity-visual > .content-image { transform: scale(1.09); filter: saturate(1.05) contrast(1.02); }
+}
 .activity-visual::before { position: absolute; width: 130px; height: 130px; border: 1px dashed rgba(255,255,255,.14); border-radius: 50%; content: ""; }
 .activity-visual:has(.content-image)::before { display: none; }
 .activity-visual > svg, .activity-visual > span { position: relative; z-index: 1; }
@@ -734,6 +739,13 @@ button {
 .activity-detail { display: grid; grid-template-columns: 50px 1fr; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
 .activity-detail span { color: var(--dim); font-family: var(--mono); font-size: 7px; letter-spacing: .09em; }
 .activity-detail strong { color: #aeb5c2; font-size: 10px; font-weight: 520; }
+
+@media (prefers-reduced-motion: reduce) {
+  .activity-card,
+  .activity-visual > .content-image { transition: none; }
+  .activity-card:hover,
+  .activity-card:hover .activity-visual > .content-image { transform: none; }
+}
 
 .certificate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .certificate-card { display: block; height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: transparent; }
