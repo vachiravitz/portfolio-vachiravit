@@ -73,6 +73,12 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
 
           <ul className="case-tags">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
 
+          {project.documentation ? (
+            <a className="case-read-document" href={project.documentation} target="_blank" rel="noreferrer">
+              <FileText size={16} />Read PDF<ArrowUpRight size={16} />
+            </a>
+          ) : null}
+
           <div className="case-external-links">
             {project.demo ? <a href={project.demo} target="_blank" rel="noreferrer">Live demo<ArrowUpRight size={16} /></a> : null}
             {project.figma ? <a href={project.figma} target="_blank" rel="noreferrer">Figma<ExternalLink size={15} /></a> : null}
@@ -123,9 +129,6 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
             <div className="case-documentation">
               <span><FileText size={20} />Project documentation</span>
               <div className="case-documentation-actions">
-                <a href={project.documentation} target="_blank" rel="noreferrer">
-                  Read PDF <ArrowUpRight size={17} />
-                </a>
                 <a href={project.documentation} download>
                   Download PDF <ArrowDownToLine size={17} />
                 </a>
