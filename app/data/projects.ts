@@ -15,7 +15,7 @@ export const projects = [
     github: "https://github.com/",
     demo: "",
     figma: "",
-    documentation: "", // ตัวอย่าง: "/documents/projects/giewbu-documentation.pdf"
+    documentation: "/images/projects/giewbu.pdf",
     image: "/images/projects/giewbu-cover.jpg", // รูปหน้าปกใน public/images/projects
     tone: "blue",
     featured: true,
@@ -58,8 +58,8 @@ export const projects = [
     github: "https://github.com/",
     demo: "https://example.com/",
     figma: "https://figma.com/",
-    documentation: "", // ตัวอย่าง: "/documents/projects/findty.pdf"
-    image: "",
+    documentation: "/images/projects/FindTy.pdf",
+    image: "/images/projects/findty1.jpg",
     tone: "violet",
     featured: false,
     details: {
