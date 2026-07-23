@@ -1,13 +1,13 @@
 // ใบรับรอง รูปภาพวางไว้ใน public/images/certificates
 export const certificates = [
   {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    date: "2025",
-    code: "RWD",
+    title: "Cybersecurity Foundation Course",
+    issuer: "NCSA e-Learning",
+    date: "29 Nov 2025",
+    code: "01 / NCSA",
     tone: "blue",
     credentialUrl: "/images/certificates/certi1.pdf",
-    image: "",
+    image: "/images/certificates/certi1.jpg",
   },
   {
     title: "Foundations of UX Design",
