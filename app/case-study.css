@@ -10,6 +10,7 @@
   --case-accent: #3d62a8;
   --case-secondary: #dce7f7;
   --case-page-padding: clamp(24px, 4vw, 72px);
+  --case-content-width: 1520px;
   min-height: 100vh;
   overflow: hidden;
   background: var(--case-background);
@@ -56,20 +57,20 @@
 .case-gallery,
 .case-final-grid,
 .case-footer {
-  width: 100%;
-  margin-inline: 0;
+  width: min(var(--case-content-width), calc(100% - 48px));
+  margin-inline: auto;
 }
 
 .case-header,
 .case-hero,
 .case-gallery,
-.case-footer { padding-inline: var(--case-page-padding); }
+.case-footer { padding-inline: 0; }
 
 .case-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 82px;
+  min-height: 72px;
   border-bottom: 1px solid var(--case-line);
 }
 
@@ -104,7 +105,7 @@
 .case-back-top:hover,
 .case-footer a:hover { color: var(--case-accent); }
 
-.case-hero { padding-block: clamp(72px, 8vw, 120px) clamp(86px, 9vw, 132px); }
+.case-hero { padding-block: clamp(50px, 5vw, 76px) clamp(64px, 6vw, 92px); }
 .case-kicker,
 .case-eyebrow,
 .case-role > span,
@@ -131,7 +132,7 @@
   margin: 0;
   color: var(--case-ink);
   font-family: var(--theme-heading-font);
-  font-size: clamp(66px, 10vw, 154px);
+  font-size: clamp(62px, 8.6vw, 140px);
   font-weight: 760;
   line-height: .82;
   letter-spacing: -.075em;
@@ -293,14 +294,16 @@
 .case-features h3 { margin: 30px 0 14px; color: var(--case-ink); font-size: 24px; letter-spacing: -.03em; }
 .case-features p { max-width: 360px; margin: 0; color: var(--case-text); font-size: 15px; line-height: 1.7; }
 
-.case-gallery { padding-block: clamp(90px, 10vw, 150px); }
+.case-gallery { padding-block: clamp(64px, 7vw, 96px); }
 .case-gallery-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 34px; }
 .case-gallery-heading p { max-width: 520px; margin: 0; color: var(--case-text); font-size: 15px; line-height: 1.65; }
-.case-gallery-grid { display: grid; grid-template-columns: 1.18fr .82fr; gap: 24px; align-items: stretch; }
+.case-gallery-grid { display: grid; grid-template-columns: minmax(0, 2.83fr) minmax(220px, 1fr); gap: 24px; align-items: start; }
 .case-gallery figure { margin: 0; overflow: hidden; border: 1px solid var(--case-line); background: rgba(255,255,255,.64); box-shadow: none; }
 .case-gallery-wide { grid-column: 1 / -1; }
-.case-gallery-visual { height: clamp(360px, 40vw, 650px); border-bottom: 1px solid var(--case-line); }
-.case-gallery figure:not(.case-gallery-wide) .case-gallery-visual { height: clamp(330px, 34vw, 520px); }
+.case-gallery-visual { border-bottom: 1px solid var(--case-line); }
+.case-gallery figure:not(.case-gallery-wide) .case-gallery-visual { height: auto; }
+.case-gallery-item-1 .case-gallery-visual { aspect-ratio: 1.5; }
+.case-gallery-item-2 .case-gallery-visual { aspect-ratio: .53; }
 .case-gallery-item-2 { margin-top: 0 !important; }
 .case-gallery figcaption { min-height: 76px; padding: 24px 26px; color: var(--case-text); font-size: 14px; line-height: 1.6; }
 
@@ -350,10 +353,10 @@
   .case-features,
   .case-gallery,
   .case-final-grid,
-  .case-footer { width: 100%; }
+  .case-footer { width: min(100% - 28px, var(--case-content-width)); }
   .case-brand span { display: none; }
   .case-title-row h1 { font-size: clamp(52px, 17vw, 82px); }
-  .case-hero { padding-bottom: 76px; }
+  .case-hero { padding-block: 44px 58px; }
   .case-overview { margin-top: 0; }
   .case-cover { min-height: 0; padding: 18px; }
   .case-cover:has(.case-image-placeholder) { min-height: 390px; }
@@ -362,9 +365,9 @@
   .case-features,
   .case-gallery-grid { grid-template-columns: 1fr; }
   .case-gallery-wide { grid-column: auto; }
-  .case-gallery-item-2 { margin-top: 0 !important; }
+  .case-gallery-item-2 { justify-self: center; width: min(100%, 420px); margin-top: 0 !important; }
   .case-gallery-heading { align-items: flex-start; flex-direction: column; }
-  .case-gallery-visual,
-  .case-gallery figure:not(.case-gallery-wide) .case-gallery-visual { height: 360px; }
+  .case-gallery-item-1 .case-gallery-visual { height: auto; aspect-ratio: 1.5; }
+  .case-gallery-item-2 .case-gallery-visual { height: auto; aspect-ratio: .53; }
   .case-footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: 18px; }
 }
