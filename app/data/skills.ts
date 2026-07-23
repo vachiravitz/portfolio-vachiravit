@@ -1,25 +1,23 @@
 // รายการ Technical, Design และ Soft Skills
 export const skillGroups = [
   {
-    title: "Technical Skills",
-    skills: [
-      "Python",
-      "JavaScript",
-      "HTML / CSS",
-      "Microsoft Office",
-      "Visual Studio Code",
-      "MySQL",
-      "Thai (-Negative)",
-      "SALLC-EPT : B1.2 Elementary (English language proficiency)" ,
-    ],
+    title: "Languages & Web",
+    skills: ["Python", "JavaScript", "HTML / CSS", "MySQL"],
+  },
+  {
+    title: "Tools & Productivity",
+    skills: ["Microsoft Office", "Visual Studio Code"],
+  },
+  {
+    title: "Design",
+    skills: ["UI/UX Design", "Adobe Photoshop", "Figma"],
   },
   {
     title: "Soft Skills",
-    skills: ["Adaptability", "Creativity", "Attention to Detail", "Time Management", "Problem-Solving", "Presentation"],
+    skills: ["Adaptability", "Creativity", "Time Management", "Problem-Solving"],
   },
   {
-    title: "Design Skills",
-    skills: ["UI/UX Design", "Adobe Photoshop", "Adobe Premiere Pro", "Figma", "Procreate"],
+    title: "Additional Skills",
+    skills: ["Thai", "English — SALLC-EPT B1.2", "Typing speed — 98 words / minute"],
   },
 ];
-

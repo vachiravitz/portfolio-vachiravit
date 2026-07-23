@@ -8,12 +8,37 @@ import { navItems, profile } from "../data";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeHref, setActiveHref] = useState("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let frame = 0;
+    const sectionHrefs = [...navItems.map((item) => item.href), "#contact"];
+    const sections = sectionHrefs
+      .map((href) => document.querySelector<HTMLElement>(href))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 24);
+        const marker = window.innerHeight * 0.32;
+        const current = sections.find((section) => {
+          const bounds = section.getBoundingClientRect();
+          return bounds.top <= marker && bounds.bottom > marker;
+        });
+        setActiveHref(current ? `#${current.id}` : "");
+        frame = 0;
+      });
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -28,13 +53,13 @@ export function Navbar() {
 
       <nav className="desktop-nav" aria-label="Main navigation">
         {navItems.map((item) => (
-          <a key={item.href} href={item.href}>
+          <a key={item.href} href={item.href} className={activeHref === item.href ? "is-active" : ""} aria-current={activeHref === item.href ? "location" : undefined}>
             {item.label}
           </a>
         ))}
       </nav>
 
-      <a className="nav-cta desktop-only" href="#contact">
+      <a className={`nav-cta desktop-only ${activeHref === "#contact" ? "is-active" : ""}`} href="#contact" aria-current={activeHref === "#contact" ? "location" : undefined}>
         Let&apos;s connect <ArrowUpRight size={15} />
       </a>
 
@@ -59,11 +84,11 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
           >
             {navItems.map((item, index) => (
-              <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+              <a key={item.href} href={item.href} className={activeHref === item.href ? "is-active" : ""} aria-current={activeHref === item.href ? "location" : undefined} onClick={() => setOpen(false)}>
                 <span>0{index + 1}</span>{item.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)}>
+            <a href="#contact" className={activeHref === "#contact" ? "is-active" : ""} aria-current={activeHref === "#contact" ? "location" : undefined} onClick={() => setOpen(false)}>
               <span>0{navItems.length + 1}</span>Contact
             </a>
           </motion.nav>
