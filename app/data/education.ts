@@ -2,19 +2,19 @@
 export const education = [
   {
     degree: "B.Sc. in Computer Science",
-    school: "YOUR UNIVERSITY",
+    school: "BANGKOK UNIVERSITY",
     faculty: "School of Information Technology and Innovation",
     period: " 2023 ",
     highlights: [""],
     gpa: "GPA: 3.22",
   },
-  {
-    degree: "Science and Mathematics Program",
-    school: "YOUR HIGH SCHOOL",
-    faculty: "Upper Secondary Education",
-    period: "2020",
-    highlights: [],
-    gpa: "GPA: 3.75",
-  },
+  // {
+  //   degree: "Science and Mathematics Program",
+  //   school: "YOUR HIGH SCHOOL",
+  //   faculty: "Upper Secondary Education",
+  //   period: "2020",
+  //   highlights: [],
+  //   gpa: "GPA: 3.75",
+  // },
 ];
 

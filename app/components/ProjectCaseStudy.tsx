@@ -120,9 +120,17 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
             <div className="case-final-block"><span>RECOGNITION</span><strong>{project.details.recognition.title}</strong><small>{project.details.recognition.organization}</small></div>
           ) : null}
           {project.documentation ? (
-            <a className="case-documentation" href={project.documentation} download>
-              <span><FileText size={20} />Download project documentation</span><ArrowDownToLine size={19} />
-            </a>
+            <div className="case-documentation">
+              <span><FileText size={20} />Project documentation</span>
+              <div className="case-documentation-actions">
+                <a href={project.documentation} target="_blank" rel="noreferrer">
+                  Read PDF <ArrowUpRight size={17} />
+                </a>
+                <a href={project.documentation} download>
+                  Download PDF <ArrowDownToLine size={17} />
+                </a>
+              </div>
+            </div>
           ) : null}
         </section>
 

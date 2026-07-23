@@ -2,6 +2,8 @@
 // รูปภาพ: public/images/projects
 // เอกสาร PDF: public/documents/projects
 // ทุกข้อมูลของหน้า Case Study อยู่ใน details ของโปรเจกต์นั้น
+// สีของหน้า Project เลือกด้วย tone: "blue", "violet" หรือ "slate"
+// แก้ชุดสีของแต่ละ tone ได้ที่ app/case-study.css
 export const projects = [
   {
     number: "01",
@@ -40,7 +42,7 @@ export const projects = [
         { image: "/images/projects/giewbu-award.jpg", caption: "Best AI Prototype for Real-World Impact Award at IT Empowering Day 2026.", wide: false, fit: "cover" },
     
       ],
-      collaborators: [], // ตัวอย่าง: ["Name One", "Name Two"]
+      collaborators: ['เขมเดช เหนียวแน่น', 'เอื้ออวัช เตชะวีรพงศ์', 'กัญญ์วรา บ่นหา', 'จีระเดช มักเจริญ'], // ตัวอย่าง: ["Name One", "Name Two"]
       recognition: {
         title: "Best AI Prototype for Real-World Impact Award",
         organization: "Bangkok University",
@@ -79,10 +81,10 @@ export const projects = [
         { number: "03", title: "Review & Profile", description: "Manage personal profiles and rate gaming experiences with fellow players." },
       ],
       gallery: [
-        { image: "/images/projects/findty2.jpg", caption: "Discovery and search interface.", wide: false, fit: "contain" },
-        { image: "/images/projects/findty3.jpg", caption: "Map and place-detail experience.", wide: false, fit: "contain" },
+        { image: "/images/projects/findty3.jpg", caption: "Discovery and search interface.", wide: false, fit: "contain" },
+        { image: "/images/projects/findty2.jpg", caption: "Map and place-detail experience.", wide: false, fit: "contain" },
       ],
-      collaborators: [],
+      collaborators: ['เขมเดช เหนียวแน่น', 'เอื้ออวัช เตชะวีรพงศ์', 'กัญญ์วรา บ่นหา'],
       recognition: { title: "", organization: "" },
     },
   },
