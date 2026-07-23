@@ -9,10 +9,14 @@
   --case-line: rgba(24, 36, 58, .12);
   --case-accent: #3d62a8;
   --case-secondary: #dce7f7;
-  --case-closing: #132f43;
+  /* BLUE tone: GIEWBU */
+  --case-closing: #173a57;
   --case-closing-text: #c4d2db;
   --case-closing-line: rgba(255,255,255,.18);
-  --case-closing-accent: #79cdbd;
+  --case-closing-accent: #8fcdf2;
+  --case-closing-muted: #9eb4c3;
+  --case-document: #426cb3;
+  --case-document-hover: #365b9b;
   --case-page-padding: clamp(24px, 4vw, 72px);
   --case-content-width: 1460px;
   min-height: 100vh;
@@ -40,6 +44,14 @@
   --case-line: rgba(65, 47, 91, .16);
   --case-accent: #835db4;
   --case-secondary: #e7b5cf;
+  /* VIOLET tone: Findty */
+  --case-closing: #382849;
+  --case-closing-text: #d8cfdf;
+  --case-closing-line: rgba(255,255,255,.17);
+  --case-closing-accent: #c8a9ed;
+  --case-closing-muted: #b2a3bf;
+  --case-document: #7b58a6;
+  --case-document-hover: #66478f;
 }
 
 .case-tone-slate {
@@ -52,6 +64,14 @@
   --case-line: rgba(41, 67, 74, .16);
   --case-accent: #4f7d88;
   --case-secondary: #e2b875;
+  /* SLATE tone: Signal Analytics */
+  --case-closing: #29434a;
+  --case-closing-text: #d0dcde;
+  --case-closing-line: rgba(255,255,255,.17);
+  --case-closing-accent: #a5d5dc;
+  --case-closing-muted: #a7b9bd;
+  --case-document: #4f7d88;
+  --case-document-hover: #3f6872;
 }
 
 .case-header,
@@ -377,7 +397,7 @@
 .case-final-block small { display: block; margin-top: 7px; color: var(--case-closing-text); font-size: 13px; }
 .case-collaborator-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 24px 0 0; padding: 0; list-style: none; }
 .case-collaborator-list li { padding: 8px 11px; border: 1px solid var(--case-closing-line); border-radius: 7px; background: rgba(255,255,255,.05); color: #ffffff; font-size: 12px; font-weight: 650; line-height: 1.2; }
-.case-collaborator-list li.is-placeholder { color: #91a7b5; font-weight: 560; }
+.case-collaborator-list li.is-placeholder { color: var(--case-closing-muted); font-weight: 560; }
 .case-collaborator-list li::before { display: none; content: none; }
 .case-final-block li::before { margin-right: 8px; color: var(--case-accent); content: "—"; }
 
@@ -391,7 +411,7 @@
   padding: 32px;
   border-right: 1px solid var(--case-closing-line);
   border-bottom: 1px solid var(--case-closing-line);
-  background: #ff6959;
+  background: var(--case-document);
   color: #ffffff;
   font-size: 12px;
   font-weight: 800;
@@ -402,7 +422,7 @@
 .case-documentation > span { display: inline-flex; align-items: center; gap: 12px; }
 .case-documentation-actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
 .case-documentation-actions a { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.52); border-radius: 7px; background: rgba(255,255,255,.08); color: #ffffff; font-size: 10px; }
-.case-documentation-actions a:hover { transform: translateY(-2px); }
+.case-documentation-actions a:hover { background: var(--case-document-hover); transform: translateY(-2px); }
 
 .case-closing .case-footer { display: flex; align-items: center; justify-content: space-between; min-height: 126px; border-top: 1px solid var(--case-line); color: var(--case-text); font-size: 10px; }
 .case-closing .case-footer a { color: var(--case-text); }
