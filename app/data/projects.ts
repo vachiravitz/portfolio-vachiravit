@@ -15,8 +15,9 @@ export const projects = [
     github: "https://github.com/",
     demo: "",
     figma: "",
-    documentation: "/images/projects/giewbu.pdf",
+    documentation: "", // ตัวอย่าง: "/documents/projects/giewbu-documentation.pdf"
     image: "/images/projects/giewbu-cover.jpg", // รูปหน้าปกใน public/images/projects
+    video: "",
     tone: "blue",
     featured: true,
     details: {
@@ -55,11 +56,12 @@ export const projects = [
     responsibility: "Built reusable UI components, integrated a map API, and created responsive search and place-detail experiences.",
     outcome: "Completed the end-to-end user flow from discovery to saved place collections.",
     tags: ["Next.js", "Map API", "Tailwind CSS"],
-    github: "https://github.com/",
+    github: "https://github.com/vachiravitz/findty_v3.git",
     demo: "https://example.com/",
     figma: "https://figma.com/",
-    documentation: "/images/projects/FindTy.pdf",
+    documentation: "", // ตัวอย่าง: "/documents/projects/local-lens.pdf"
     image: "/images/projects/findty1.jpg",
+    video: "https://www.youtube-nocookie.com/embed/qB-IsA_a_v8?autoplay=1&mute=1&loop=1&playlist=qB-IsA_a_v8&controls=1&rel=0&playsinline=1",
     tone: "violet",
     featured: false,
     details: {
@@ -99,6 +101,7 @@ export const projects = [
     figma: "",
     documentation: "", // ตัวอย่าง: "/documents/projects/signal-analytics.pdf"
     image: "",
+    video: "",
     tone: "slate",
     featured: false,
     details: {

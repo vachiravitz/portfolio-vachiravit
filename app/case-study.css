@@ -198,6 +198,14 @@
   max-height: none;
 }
 
+.case-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--case-line);
+  background: #000000;
+}
+
 .case-image-cover { object-fit: cover; }
 .case-image-contain { object-fit: contain; }
 

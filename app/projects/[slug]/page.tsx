@@ -10,6 +10,7 @@ type ProjectPageProps = {
 const projectSlugAliases: Record<string, string> = {
   "local-lens": "findty",
   "find-ty": "findty",
+  "find-lens": "findty",
 };
 
 function findProject(slug: string) {

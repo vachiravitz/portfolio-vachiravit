@@ -42,7 +42,18 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
 
       <section className="case-overview">
         <div className="case-cover">
-          <ProjectImage src={project.image} alt={`${project.title} main interface`} label="MAIN PROJECT VISUAL" large />
+          {project.video ? (
+            <iframe
+              className="case-video"
+              src={project.video}
+              title={`${project.title} project video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          ) : (
+            <ProjectImage src={project.image} alt={`${project.title} main interface`} label="MAIN PROJECT VISUAL" large />
+          )}
         </div>
         <div className="case-overview-copy">
           {project.details.highlight ? <span className="case-highlight">{project.details.highlight}</span> : null}
