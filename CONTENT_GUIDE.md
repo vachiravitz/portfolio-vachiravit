@@ -1,84 +1,147 @@
 # คู่มือแก้ข้อมูล Portfolio
 
-ข้อมูลที่แสดงบนเว็บไซต์เกือบทั้งหมดอยู่ในไฟล์เดียว:
+ตอนนี้ข้อมูลและหน้าจอถูกแยกตาม Section แล้ว คุณจึงแก้เฉพาะไฟล์ที่เกี่ยวข้องได้เลย
 
-`app/data/portfolio.ts`
+## ข้อมูลที่ต้องแก้บ่อย
 
-เปิดไฟล์นี้ด้วย VS Code แล้วค้นหาหัวข้อที่ต้องการแก้ เช่น `profile`, `about`, `projects`, `skillGroups`, `workExperience`, `activities` หรือ `certificates`
+| สิ่งที่ต้องการแก้ | ไฟล์ |
+| --- | --- |
+| ชื่อ รูป อีเมล เบอร์โทร Social Media | `app/data/profile.ts` |
+| ข้อความ About Me | `app/data/about.ts` |
+| ประวัติการศึกษา | `app/data/education.ts` |
+| Technical / Design / Soft Skills | `app/data/skills.ts` |
+| ผลงานและโปรเจกต์ | `app/data/projects.ts` |
+| กิจกรรม | `app/data/activities.ts` |
+| ประสบการณ์ทำงาน | `app/data/experience.ts` |
+| ใบรับรอง | `app/data/certificates.ts` |
+| เมนูด้านบน | `app/data/navigation.ts` |
 
-## 1. ชื่อ รูป และช่องทางติดต่อ
+## รูปและเอกสาร
 
-แก้ใน `profile`:
+- รูปโปรไฟล์: `public/profile.png`
+- Resume: `public/resume.pdf`
+- รูปโปรเจกต์: `public/images/projects`
+- เอกสาร PDF ของโปรเจกต์: `public/documents/projects`
+- รูปกิจกรรม: `public/images/activities`
+- รูปใบรับรอง: `public/images/certificates`
 
-- `name` ชื่อ–นามสกุล
-- `initials` ตัวอักษรย่อบนโลโก้
-- `role` ตำแหน่งหรือเป้าหมายอาชีพ
-- `intro` ข้อมูลสรุปสั้น ๆ
-- `email`, `phone`, `location`
-- `socials` ลิงก์ GitHub, LinkedIn และ Twitter / X
-
-หากต้องการใช้รูปจริง ให้นำรูปชื่อ `profile.png` ไปวางในโฟลเดอร์ `public` แล้วแก้:
-
-```ts
-photo: "/profile.png",
-```
-
-นำ Resume ชื่อ `resume.pdf` ไปวางในโฟลเดอร์ `public` ปุ่มดาวน์โหลดจะใช้งานได้ทันที
-
-## 2. การศึกษาและเกี่ยวกับฉัน
-
-แก้ใน `about.body`, `about.education` และ `about.details` สามารถเพิ่มรายการได้โดยคัดลอก object เดิมทั้งชุดแล้วเปลี่ยนข้อความ
-
-## 3. โปรเจกต์
-
-แก้รายการใน `projects`:
-
-- `course` ชื่อรายวิชาหรือประเภทโปรเจกต์
-- `description` รายละเอียดผลงาน
-- `responsibility` ส่วนที่ตัวเองรับผิดชอบ
-- `outcome` ผลลัพธ์หรือสิ่งที่ได้เรียนรู้
-- `tags` เครื่องมือและเทคโนโลยี
-- `github`, `demo`, `figma` ลิงก์ต่าง ๆ
-- `image` รูป Screenshot ของผลงาน
-
-วางรูปไว้ที่ `public/images/projects` แล้วใส่ path เช่น:
+ตัวอย่างการใส่รูปโปรเจกต์:
 
 ```ts
 image: "/images/projects/my-project.jpg",
+documentation: "/documents/projects/my-project.pdf",
 ```
 
-ควรใส่ Screenshot ไว้เสมอเมื่อใช้ลิงก์ Figma เพื่อให้ผู้ชมเห็นผลงานได้ทันที
-
-## 4. ระดับทักษะ
-
-แก้ `skillGroups` โดย `level` เป็นตัวเลขตั้งแต่ 0–100 เช่น:
+หากยังไม่มีรูปหรือลิงก์ ให้ใช้ค่าว่าง:
 
 ```ts
-{ name: "React", level: 80 }
+image: "",
+demo: "",
+documentation: "",
 ```
 
-## 5. ประสบการณ์ กิจกรรม และใบรับรอง
+เมื่อใส่ path ใน `documentation` ปุ่ม `Read project documentation` จะปรากฏในรายละเอียดโปรเจกต์ และเปิด PDF ในแท็บใหม่ หากยังไม่มีเอกสารให้ใช้ค่าว่าง `""` ปุ่มจะถูกซ่อนไว้อัตโนมัติ
 
-- ประสบการณ์งาน: `workExperience`
-- กิจกรรม/การแข่งขัน/ชมรม/สัมมนา: `activities`
-- ใบรับรองและการอบรม: `certificates`
+## ไฟล์หน้าจอแต่ละ Section
 
-รูปกิจกรรมวางใน `public/images/activities` และรูปใบรับรองวางใน `public/images/certificates`
+| Section | ไฟล์ |
+| --- | --- |
+| หน้าหลัก | `app/sections/Hero.tsx` |
+| About และ Education | `app/sections/About.tsx` |
+| Projects | `app/sections/Projects.tsx` |
+| Skills | `app/sections/Skills.tsx` |
+| Activities | `app/sections/Activities.tsx` |
+| Work Experience | `app/sections/Experience.tsx` |
+| Certifications | `app/sections/Certificates.tsx` |
+| Contact | `app/sections/Contact.tsx` |
+| Footer | `app/sections/Footer.tsx` |
 
-## 6. ดูผลบนเครื่อง
+หากต้องการแก้เฉพาะข้อความหรือข้อมูล ไม่จำเป็นต้องแก้ไฟล์ใน `app/sections` ให้แก้ไฟล์ใน `app/data` ก่อน
 
-เปิด PowerShell ในโฟลเดอร์โปรเจกต์แล้วรัน:
+## หน้า Project Case Study
+
+ปุ่ม `Read project details` จะเปิดหน้าเฉพาะของแต่ละโปรเจกต์ เช่น `/projects/giewbu-ai-project`
+
+ข้อมูลทั้งหมดของหน้านี้แก้ใน `app/data/projects.ts` ภายใน `details` ของโปรเจกต์นั้น:
+
+- `slug` คือชื่อที่อยู่บน URL ใช้ตัวอักษรอังกฤษเล็กและ `-`
+- `headline` คือหัวข้อใหญ่ของ Case Study
+- `overviewLabel` คือคำเล็กเหนือหัวข้อ เช่น `OVERVIEW`
+- `highlight` คือป้ายสีเด่นเหนือ Overview เช่น `AWARD-WINNING AI PROJECT` หากไม่ใช้ให้ใส่ `""`
+- `overview` คือย่อหน้าอธิบายโปรเจกต์
+- `role` และ `roleDescription` คือบทบาทของคุณ
+- `features` คือความสามารถสำคัญ 3 ส่วน
+- `gallery` คือรูปเพิ่มเติมและคำบรรยาย
+- `collaborators` คือรายชื่อสมาชิก
+- `recognition` คือรางวัลหรือการยอมรับ
+- `documentation` คือ path ของเอกสาร PDF
+
+ตัวอย่างการใส่รูปเพิ่มเติม:
+
+```ts
+gallery: [
+  {
+    image: "/images/projects/giewbu-summary.jpg",
+    caption: "Summary insight and conversation analysis interface.",
+    wide: false,
+    fit: "contain",
+  },
+],
+```
+
+กำหนด `wide: false` สำหรับรูปขนาดปกติสองคอลัมน์ และใช้ `wide: true` เมื่อต้องการให้รูปกินพื้นที่เต็มแถว
+
+- `fit: "cover"` ทำให้รูปเต็มช่อง ไม่มีพื้นที่สีขาว แต่อาจตัดขอบรูปเล็กน้อย
+- `fit: "contain"` แสดงรูปครบทั้งภาพ แต่อาจมีพื้นที่ว่างหากสัดส่วนรูปไม่ตรงกับช่อง
+
+## สีและฟอนต์
+
+แก้ที่ `app/theme.css` ไฟล์เดียว โดยในไฟล์จะแยกส่วนไว้ให้แล้ว เช่น:
+
+- `ทั้งเว็บไซต์` เปลี่ยนสีพื้นหลังและฟอนต์หลักทั้งเว็บ
+- `EDUCATION` เปลี่ยนเฉพาะการศึกษา
+- `SKILLS` เปลี่ยนเฉพาะ Technical / Design / Soft Skills
+- `PROJECTS`, `ACTIVITIES`, `EXPERIENCE` เปลี่ยนเฉพาะส่วนนั้น
+
+ตัวอย่าง หากต้องการเปลี่ยนเฉพาะ Skills ให้ค้นหา `SKILLS` แล้วแก้:
+
+```css
+#skills {
+  --skills-category-color: #0b2b69;
+  --skills-item-color: #2448b6;
+  --skills-bullet-color: #2448b6;
+  --skills-heading-font: "Arial", sans-serif;
+  --skills-item-font: "Tahoma", sans-serif;
+}
+```
+
+สีใช้รหัส HEX เช่น `#000000` และฟอนต์ใส่ชื่อไว้ในเครื่องหมายคำพูด เช่น `"Tahoma"` หากแก้แล้วกด `Ctrl+S` หน้าเว็บจะอัปเดตทันที
+
+## ลำดับ Section
+
+แก้ที่ `app/components/PortfolioPage.tsx` โดยย้ายลำดับบรรทัด เช่น:
+
+```tsx
+<Hero />
+<About />
+<Projects />
+<Skills />
+<Activities />
+<Experience />
+```
+
+## เปิดดูแบบ Real-time
 
 ```powershell
+cd "C:\Users\USER\OneDrive\Desktop\Portfolio"
 npm.cmd run dev
 ```
 
-เปิด `http://localhost:3000` เมื่อแก้และบันทึกไฟล์ หน้าเว็บจะอัปเดตอัตโนมัติ กด `Ctrl + C` เพื่อหยุด
+เปิด `http://localhost:3000` แล้วกด `Ctrl+S` หลังแก้ไฟล์ หน้าเว็บจะอัปเดตอัตโนมัติ
 
 ## ข้อควรระวัง
 
 - ข้อความต้องอยู่ระหว่างเครื่องหมาย `"..."`
-- แต่ละรายการคั่นด้วยเครื่องหมาย comma `,`
-- หากยังไม่มีลิงก์หรือรูป ให้ใช้ค่าว่าง `""`
+- แต่ละรายการคั่นด้วย comma `,`
 - อย่าลบชื่อ field ทางซ้าย เช่น `title:` หรือ `description:`
-
+- หากเพิ่มรายการใหม่ ให้คัดลอก object เดิมทั้งชุดเพื่อป้องกัน field หาย

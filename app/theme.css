@@ -1,0 +1,472 @@
+/*
+ * ================================================================
+ *  PORTFOLIO THEME SETTINGS
+ * ================================================================
+ * แก้เฉพาะค่าที่อยู่ในส่วน "ตั้งค่าสีและฟอนต์" ด้านล่างได้เลย
+ *
+ * สีใช้รูปแบบ HEX เช่น #0b2b69
+ * ฟอนต์ใช้รูปแบบ "ชื่อฟอนต์", ฟอนต์สำรอง, sans-serif
+ * ตัวอย่าง: "Tahoma", "Leelawadee UI", sans-serif
+ */
+
+/* ==================== ทั้งเว็บไซต์ ==================== */
+:root {
+  --theme-page-background: #ffffff;
+  --theme-main-text: #0b2b69;
+  --theme-main-accent: #2448b6;
+  --theme-heading-font: var(--font-geist-sans), "Leelawadee UI", Arial, sans-serif;
+  --theme-body-font: var(--font-geist-sans), "Leelawadee UI", Arial, sans-serif;
+}
+
+/* ==================== เมนูด้านบน ==================== */
+.site-header {
+  --section-heading-color: #0b2b69;
+  --section-text-color: #677594;
+  --section-accent-color: #2448b6;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== HOME / HERO ==================== */
+#top {
+  --section-background: #fffdf8;
+  --section-heading-color: #18243a;
+  --section-text-color: #596579;
+  --section-accent-color: #3d62a8;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== ABOUT ==================== */
+#about {
+  --section-background: #f3fbfa;
+  --section-heading-color: #163c42;
+  --section-text-color: #526f72;
+  --section-accent-color: #25827e;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== EDUCATION ==================== */
+#about .education-section {
+  --education-heading-color: #0b2b69;
+  --education-text-color: #2448b6;
+  --education-card-background: #f7f4ef;
+  --education-pill-background: #ffffff;
+  --education-heading-font: var(--theme-heading-font);
+  --education-body-font: var(--theme-body-font);
+}
+
+/* ==================== PROJECTS ==================== */
+#projects {
+  --section-background: #fff6ef;
+  --section-heading-color: #4b2d25;
+  --section-text-color: #725e57;
+  --section-accent-color: #b65b38;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== SKILLS ====================
+ * เปลี่ยนค่าในส่วนนี้ จะเปลี่ยนเฉพาะ Skills เท่านั้น
+ */
+#skills {
+  --section-background: #f2f7ff;
+  --section-heading-color: #193b70;
+  --section-text-color: #5a6d8a;
+  --section-accent-color: #3568b8;
+
+  --skills-category-color: #193b70; /* Technical / Design / Soft */
+  --skills-item-color: #355783;     /* Python, Figma, Leadership */
+  --skills-bullet-color: #5b8bd1;   /* จุดนำหน้ารายการ */
+  --skills-heading-font: "Tahoma", var(--theme-heading-font);
+  --skills-item-font: var(--theme-body-font);
+}
+
+/* ==================== ACTIVITIES ==================== */
+#activities {
+  --section-background: #f8f4ff;
+  --section-heading-color: #49356c;
+  --section-text-color: #6d6180;
+  --section-accent-color: #7a58ae;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== EXPERIENCE ==================== */
+#experience {
+  --section-background: #f1faf5;
+  --section-heading-color: #254d3f;
+  --section-text-color: #5b746b;
+  --section-accent-color: #398267;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== CERTIFICATES ==================== */
+#certificates {
+  --section-background: #fffaf0;
+  --section-heading-color: #59451e;
+  --section-text-color: #786d54;
+  --section-accent-color: #a87821;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== CONTACT ==================== */
+#contact {
+  --section-background: #edf4ff;
+  --section-heading-color: #173760;
+  --section-text-color: #5a6c83;
+  --section-accent-color: #285f9f;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  --section-heading-color: #0b2b69;
+  --section-text-color: #8a96b0;
+  --section-accent-color: #2448b6;
+  --section-heading-font: var(--theme-heading-font);
+  --section-body-font: var(--theme-body-font);
+}
+
+/*
+ * ================================================================
+ *  การนำค่าด้านบนไปใช้ — ปกติไม่ต้องแก้ส่วนนี้
+ * ================================================================
+ */
+
+html,
+body {
+  background: var(--theme-page-background);
+  color: var(--theme-main-text);
+  font-family: var(--theme-body-font);
+}
+
+.site-header,
+.footer,
+#top,
+#about,
+#projects,
+#skills,
+#activities,
+#experience,
+#certificates,
+#contact {
+  background: var(--section-background, transparent);
+  font-family: var(--section-body-font, var(--theme-body-font));
+}
+
+.site-header .brand-copy strong,
+.site-header .brand-mark {
+  color: var(--section-heading-color);
+  font-family: var(--section-heading-font);
+}
+
+.site-header .desktop-nav a,
+.site-header .mobile-nav a {
+  color: var(--section-text-color);
+  font-family: var(--section-body-font);
+}
+
+#top h1,
+#about .section-title-wrap h2,
+#projects .section-title-wrap h2,
+#skills .section-title-wrap h2,
+#activities .section-title-wrap h2,
+#experience .section-title-wrap h2,
+#certificates .section-title-wrap h2,
+#contact h2 {
+  color: var(--section-heading-color);
+  font-family: var(--section-heading-font);
+}
+
+#top .hero-kicker,
+#about .section-label span:first-child,
+#projects .section-label span:first-child,
+#skills .section-label span:first-child,
+#activities .section-label span:first-child,
+#experience .section-label span:first-child,
+#certificates .section-label span:first-child,
+#contact .contact-email {
+  color: var(--section-accent-color);
+}
+
+#top .hero-intro,
+#about .section-title-wrap p,
+#projects .section-title-wrap p,
+#skills .section-title-wrap p,
+#activities .section-title-wrap p,
+#experience .section-title-wrap p,
+#certificates .section-title-wrap p,
+#contact .contact-main > p {
+  color: var(--section-text-color);
+  font-family: var(--section-body-font);
+}
+
+/* Education */
+#about .education-heading > span,
+#about .education-card h3 {
+  color: var(--education-heading-color);
+  font-family: var(--education-heading-font);
+}
+
+#about .education-card {
+  background: var(--education-card-background);
+  font-family: var(--education-body-font);
+}
+
+#about .education-number,
+#about .education-period {
+  background: var(--education-pill-background);
+  color: var(--education-text-color) !important;
+  font-family: var(--education-body-font) !important;
+}
+
+#about .education-card .education-degree,
+#about .education-card p,
+#about .education-card strong {
+  color: var(--education-text-color);
+  font-family: var(--education-body-font);
+}
+
+/* Skills */
+#skills .skill-group h3 {
+  color: var(--skills-category-color);
+  font-family: var(--skills-heading-font);
+}
+
+#skills .skill-list li {
+  color: var(--skills-item-color);
+  font-family: var(--skills-item-font);
+}
+
+#skills .skill-list li::before {
+  background: var(--skills-bullet-color);
+}
+
+/* Card content in each section */
+#projects .project-body h3,
+#activities .activity-body h3,
+#experience .experience-heading h3,
+#certificates .certificate-body h3 {
+  color: var(--section-heading-color);
+  font-family: var(--section-heading-font);
+}
+
+#projects .project-body > p,
+#activities .activity-body > p,
+#experience .experience-main > p {
+  color: var(--section-text-color);
+  font-family: var(--section-body-font);
+}
+
+#projects .project-links a,
+#activities .activity-org,
+#experience .experience-heading > div:first-child > span,
+#certificates .certificate-body > a {
+  color: var(--section-accent-color);
+}
+
+#contact .contact-panel {
+  background: var(--section-background);
+}
+
+.footer {
+  color: var(--section-text-color);
+  font-family: var(--section-body-font);
+}
+
+.footer > a {
+  color: var(--section-accent-color);
+}
+
+/* Full-width pastel section bands */
+#top,
+.content-section,
+.contact-section {
+  position: relative;
+  isolation: isolate;
+}
+
+#top::before,
+.content-section::before,
+.contact-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto 0 50%;
+  display: block;
+  width: 100vw;
+  border-top: 1px solid rgba(24, 36, 58, .07);
+  background: var(--section-background);
+  content: "";
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+#top::before { border-top: 0; }
+
+/* Name is intentionally split into first name and surname */
+#top .hero-name span {
+  display: block;
+  color: var(--section-heading-color);
+  font-family: var(--section-heading-font);
+}
+
+#top .hero-name .hero-last-name {
+  color: var(--section-accent-color);
+}
+
+/* Compact project preview; details open only when requested */
+#projects .project-card {
+  border-color: rgba(182, 91, 56, .16);
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 18px 45px rgba(97, 54, 35, .07);
+}
+
+#projects .project-details {
+  margin-top: 24px;
+  border-top: 1px solid rgba(182, 91, 56, .17);
+}
+
+#projects .project-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0 2px;
+  color: var(--section-accent-color);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+#projects .project-details summary::-webkit-details-marker { display: none; }
+#projects .project-details summary svg { transition: transform .2s ease; }
+#projects .project-details[open] summary svg { transform: rotate(45deg); }
+#projects .project-facts > div { border-left-color: #d98c6e; background: #fff9f5; }
+#projects .project-links { border-top-color: rgba(182, 91, 56, .15); }
+
+#projects .project-details-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 0 2px;
+  border-top: 1px solid rgba(182, 91, 56, .17);
+  color: var(--section-accent-color);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+#projects .project-details-link svg { transition: transform .2s ease; }
+#projects .project-details-link:hover svg { transform: translate(3px, -3px); }
+
+#projects .project-documentation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: var(--section-accent-color);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .02em;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+#projects .project-documentation span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#projects .project-documentation:hover {
+  color: #ffffff;
+  filter: brightness(.94);
+  transform: translateY(-2px);
+}
+
+/* Section-specific white cards stay readable on pastel backgrounds */
+#activities .activity-card,
+#experience .experience-card,
+#certificates .certificate-card {
+  background: rgba(255, 255, 255, .82);
+}
+
+/* Contact information is the main focus */
+#contact .contact-panel {
+  border-color: rgba(40, 95, 159, .16);
+  background: rgba(255, 255, 255, .6);
+  box-shadow: 0 24px 65px rgba(40, 75, 120, .08);
+}
+
+#contact .contact-main {
+  display: grid;
+  grid-template-columns: minmax(260px, .72fr) minmax(420px, 1.28fr);
+  gap: clamp(36px, 7vw, 96px);
+  align-items: end;
+  padding: 66px 0 72px;
+}
+
+#contact .contact-intro p { margin: 0 0 18px; color: var(--section-text-color); }
+#contact .contact-intro h2 { font-size: clamp(50px, 6vw, 86px); }
+
+#contact .contact-direct-grid { display: grid; gap: 12px; }
+
+#contact .contact-channel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 92px;
+  padding: 18px 20px;
+  border: 1px solid rgba(40, 95, 159, .16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .78);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+#contact .contact-channel:hover {
+  border-color: rgba(40, 95, 159, .4);
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+#contact .contact-channel-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: #e3edfb;
+  color: var(--section-accent-color);
+}
+
+#contact .contact-channel span:nth-child(2) { min-width: 0; }
+#contact .contact-channel small { display: block; margin-bottom: 5px; color: var(--section-text-color); font-size: 10px; text-transform: uppercase; letter-spacing: .09em; }
+#contact .contact-channel strong { display: block; overflow-wrap: anywhere; color: var(--section-heading-color); font-size: clamp(13px, 1.25vw, 17px); }
+#contact .contact-channel > svg { color: var(--section-accent-color); }
+
+#contact .social-grid a { background: rgba(255, 255, 255, .48); }
+#contact .social-grid { grid-template-columns: repeat(3, 1fr); }
+#contact .social-grid a > span { display: flex; flex-direction: column; gap: 3px; }
+#contact .social-grid a strong { color: var(--section-heading-color); font-size: 12px; }
+#contact .social-grid a small { color: var(--section-text-color); font-size: 9px; }
+
+@media (max-width: 900px) {
+  #contact .contact-main { grid-template-columns: 1fr; align-items: start; }
+}
+
+@media (max-width: 760px) {
+  #contact .contact-main { padding: 48px 0 56px; }
+  #contact .contact-intro h2 { font-size: clamp(46px, 14vw, 64px); }
+  #contact .contact-channel { min-height: 82px; padding: 15px; }
+  #contact .social-grid { grid-template-columns: 1fr; }
+}

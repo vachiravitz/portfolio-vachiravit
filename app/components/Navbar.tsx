@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { navItems, profile } from "../data/portfolio";
+import { navItems, profile } from "../data";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
