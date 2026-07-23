@@ -7,13 +7,26 @@ type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const projectSlugAliases: Record<string, string> = {
+  "local-lens": "findty",
+  "find-ty": "findty",
+};
+
+function findProject(slug: string) {
+  const resolvedSlug = projectSlugAliases[slug] ?? slug;
+  return projects.find((item) => item.slug === resolvedSlug);
+}
+
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return [
+    ...projects.map((project) => ({ slug: project.slug })),
+    ...Object.keys(projectSlugAliases).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((item) => item.slug === slug);
+  const project = findProject(slug);
 
   return project
     ? { title: `${project.title} — Case Study`, description: project.description }
@@ -22,7 +35,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = projects.find((item) => item.slug === slug);
+  const project = findProject(slug);
 
   if (!project) notFound();
 

@@ -48,8 +48,8 @@ export const projects = [
   },
   {
     number: "02",
-    slug: "local-lens",
-    title: "Local Lens",
+    slug: "findty",
+    title: "Findty",
     course: "Web Application Development",
     description: "A community discovery platform for finding independent places through locally curated lists.",
     responsibility: "Built reusable UI components, integrated a map API, and created responsive search and place-detail experiences.",
@@ -58,7 +58,7 @@ export const projects = [
     github: "https://github.com/",
     demo: "https://example.com/",
     figma: "https://figma.com/",
-    documentation: "", // ตัวอย่าง: "/documents/projects/local-lens.pdf"
+    documentation: "", // ตัวอย่าง: "/documents/projects/findty.pdf"
     image: "",
     tone: "violet",
     featured: false,
@@ -67,7 +67,7 @@ export const projects = [
       overviewLabel: "OVERVIEW",
       headline: "Helping people discover small places with big stories.",
       overview: [
-        "Local Lens brings independent cafés, shops, and community spaces together through thoughtfully curated collections.",
+        "Findty brings independent cafés, shops, and community spaces together through thoughtfully curated collections.",
         "The experience focuses on simple discovery, useful location details, and saving places for later.",
       ],
       role: "Frontend Developer",
