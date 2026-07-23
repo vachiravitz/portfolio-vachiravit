@@ -17,14 +17,19 @@ function ProjectImage({ src, alt, label, large = false, fit = "contain" }: { src
 
 export function ProjectCaseStudy({ project }: { project: Project }) {
   const hasRecognition = Boolean(project.details.recognition.title);
-  const hasCollaborators = project.details.collaborators.length > 0;
   const [titleLead, ...titleRest] = project.title.split(" ");
 
   return (
     <main className={`case-study case-tone-${project.tone}`}>
       <div className="case-intro">
         <header className="case-header">
-          <a className="case-brand" href="/">{profile.initials}<span>{profile.name}</span></a>
+          <a className="case-brand" href="/" aria-label="Back to portfolio home">
+            <span className="case-brand-mark">{profile.initials}</span>
+            <span className="case-brand-copy">
+              <strong>{profile.name}</strong>
+              <small>PORTFOLIO / 2026</small>
+            </span>
+          </a>
           <a className="case-back-top" href="/#projects"><ArrowLeft size={17} />All projects</a>
         </header>
 
@@ -69,7 +74,6 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
           <ul className="case-tags">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
 
           <div className="case-external-links">
-            {project.documentation ? <a href={project.documentation} download><ArrowDownToLine size={16} />Download PDF documentation</a> : null}
             {project.demo ? <a href={project.demo} target="_blank" rel="noreferrer">Live demo<ArrowUpRight size={16} /></a> : null}
             {project.figma ? <a href={project.figma} target="_blank" rel="noreferrer">Figma<ExternalLink size={15} /></a> : null}
           </div>
@@ -103,11 +107,15 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
         </section>
       ) : null}
 
-      {(hasCollaborators || hasRecognition || project.documentation) ? (
-        <section className={`case-final-grid${project.details.gallery.length ? " case-final-after-gallery" : ""}`}>
-          {hasCollaborators ? (
-            <div className="case-final-block"><span>TEAM COLLABORATORS</span><ul>{project.details.collaborators.map((name) => <li key={name}>{name}</li>)}</ul></div>
-          ) : null}
+      <section className={`case-final-grid${project.details.gallery.length ? " case-final-after-gallery" : ""}`}>
+          <div className="case-final-block case-collaborators">
+            <span>TEAM COLLABORATORS</span>
+            <ul className="case-collaborator-list">
+              {project.details.collaborators.length
+                ? project.details.collaborators.map((name) => <li key={name}>{name}</li>)
+                : <><li className="is-placeholder">Collaborator 01</li><li className="is-placeholder">Collaborator 02</li></>}
+            </ul>
+          </div>
           {hasRecognition ? (
             <div className="case-final-block"><span>RECOGNITION</span><strong>{project.details.recognition.title}</strong><small>{project.details.recognition.organization}</small></div>
           ) : null}
@@ -117,7 +125,6 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
             </a>
           ) : null}
         </section>
-      ) : null}
 
       <footer className="case-footer">
         <a href="/#projects"><ArrowLeft size={17} />Back to all projects</a>
