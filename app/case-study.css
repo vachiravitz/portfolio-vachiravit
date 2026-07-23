@@ -348,7 +348,7 @@
 .case-role small { color: var(--case-text); font-size: 13px; line-height: 1.5; }
 
 .case-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 20px 0 0; padding: 0; list-style: none; }
-.case-tags li { padding: 8px 11px; border: 1px solid var(--case-line); color: var(--case-ink); font-family: var(--mono); font-size: 8px; }
+.case-tags li { padding: 9px 12px; border: 1px solid var(--case-line); color: var(--case-ink); font-family: var(--mono); font-size: 10px; line-height: 1.2; }
 .case-read-document { display: inline-flex; align-items: center; align-self: flex-start; gap: 8px; margin-top: 16px; padding: 11px 14px; border: 1px solid var(--case-accent); border-radius: 7px; background: var(--case-accent); color: #ffffff; font-size: 11px; font-weight: 750; }
 .case-read-document:hover { color: #ffffff; filter: brightness(.94); transform: translateY(-2px); }
 .case-external-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 30px; }
