@@ -77,6 +77,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
         </section>
       ) : null}
 
+      <div className="case-closing">
       {project.details.gallery.length ? (
         <section className="case-gallery">
           <div className="case-gallery-heading"><span>PROJECT GALLERY</span><p>A closer look at the interface, project outcome, and award milestone.</p></div>
@@ -111,6 +112,7 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
         <a href="/#projects"><ArrowLeft size={17} />Back to all projects</a>
         <span>© {new Date().getFullYear()} {profile.name}</span>
       </footer>
+      </div>
     </main>
   );
 }

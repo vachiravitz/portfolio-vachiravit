@@ -35,8 +35,8 @@ export const projects = [
         { number: "03", title: "Structured Insights", description: "Extracts products, issues, solutions, and employee performance signals." },
       ],
       gallery: [
-        { image: "/images/projects/giewbu-award.jpg", caption: "Best AI Prototype for Real-World Impact Award at IT Empowering Day 2026.", wide: false, fit: "cover" },
         { image: "/images/projects/giewbu-cover2.jpg", caption: "Automated Insights & CRM Linking: Displays real-time call data, AI scores (CSAT/QA), and active customer warranties instantly.", wide: false, fit: "contain" },
+        { image: "/images/projects/giewbu-award.jpg", caption: "Best AI Prototype for Real-World Impact Award at IT Empowering Day 2026.", wide: false, fit: "cover" },
     
       ],
       collaborators: [], // ตัวอย่าง: ["Name One", "Name Two"]
