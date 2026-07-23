@@ -18,21 +18,27 @@ function ProjectImage({ src, alt, label, large = false, fit = "contain" }: { src
 export function ProjectCaseStudy({ project }: { project: Project }) {
   const hasRecognition = Boolean(project.details.recognition.title);
   const hasCollaborators = project.details.collaborators.length > 0;
+  const [titleLead, ...titleRest] = project.title.split(" ");
 
   return (
     <main className={`case-study case-tone-${project.tone}`}>
-      <header className="case-header">
-        <a className="case-brand" href="/">{profile.initials}<span>{profile.name}</span></a>
-        <a className="case-back-top" href="/#projects"><ArrowLeft size={17} />All projects</a>
-      </header>
+      <div className="case-intro">
+        <header className="case-header">
+          <a className="case-brand" href="/">{profile.initials}<span>{profile.name}</span></a>
+          <a className="case-back-top" href="/#projects"><ArrowLeft size={17} />All projects</a>
+        </header>
 
-      <section className="case-hero">
-        <p className="case-kicker">PROJECT {project.number} / CASE STUDY</p>
-        <div className="case-title-row">
-          <h1>{project.title}</h1>
-          <p>{project.description}</p>
-        </div>
-      </section>
+        <section className="case-hero">
+          <p className="case-kicker">PROJECT {project.number} / CASE STUDY</p>
+          <div className="case-title-row">
+            <h1>
+              <span>{titleLead}</span>
+              {titleRest.length ? <em>{titleRest.join(" ")}</em> : null}
+            </h1>
+            <p>{project.description}</p>
+          </div>
+        </section>
+      </div>
 
       <section className="case-overview">
         <div className="case-cover">
@@ -73,10 +79,10 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
 
       {project.details.gallery.length ? (
         <section className="case-gallery">
-          <div className="case-gallery-heading"><span>PROJECT GALLERY</span><p>Add interface screenshots, process images, presentation photos, or awards.</p></div>
+          <div className="case-gallery-heading"><span>PROJECT GALLERY</span><p>A closer look at the interface, project outcome, and award milestone.</p></div>
           <div className="case-gallery-grid">
             {project.details.gallery.map((item, index) => (
-              <figure key={`${item.caption}-${index}`} className={item.wide ? "case-gallery-wide" : ""}>
+              <figure key={`${item.caption}-${index}`} className={`${item.wide ? "case-gallery-wide " : ""}case-gallery-item-${index + 1}`}>
                 <div className="case-gallery-visual"><ProjectImage src={item.image} alt={item.caption} label={`PROJECT IMAGE ${String(index + 1).padStart(2, "0")}`} fit={item.fit} /></div>
                 <figcaption>{item.caption}</figcaption>
               </figure>
