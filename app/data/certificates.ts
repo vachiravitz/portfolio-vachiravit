@@ -6,7 +6,7 @@ export const certificates = [
     date: "2025",
     code: "RWD",
     tone: "blue",
-    credentialUrl: "https://www.freecodecamp.org/",
+    credentialUrl: "/images/certificates/certi1.pdf",
     image: "",
   },
   {
@@ -28,4 +28,3 @@ export const certificates = [
     image: "",
   },
 ];
-

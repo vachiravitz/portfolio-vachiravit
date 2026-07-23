@@ -11,7 +11,7 @@ export const profile = {
   phone: "0956279484",
   location: "Bangkok, Thailand",
   availability: "Open to internships & collaborations",
-  currentFocus: "AI × Human Experience",
+  currentFocus: "Frontend",
   resumeUrl: "/resume.pdf",
   // ใส่รูปที่ public/profile.png แล้วเปลี่ยนเป็น "/profile.png"
   photo: "",

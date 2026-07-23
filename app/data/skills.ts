@@ -1,16 +1,16 @@
 // รายการ Technical, Design และ Soft Skills
 export const skillGroups = [
   {
-    title: "Languages & Web",
-    skills: ["Python", "JavaScript", "HTML / CSS", "MySQL"],
+    title: "Programming",
+    skills: ["Python", "Dart" , "JavaScript", "Python", "C#"],
   },
   {
-    title: "Tools & Productivity",
-    skills: ["Microsoft Office", "Visual Studio Code"],
+    title: "Tools",
+    skills: ["Visual Studio", "Visual Studio Code", "Android Studio", "Git", "GitHub",  "MySQL"],
   },
   {
-    title: "Design",
-    skills: ["UI/UX Design", "Adobe Photoshop", "Figma"],
+    title: "Frontend",
+    skills: ["Figma","HTML", "React"],
   },
   {
     title: "Soft Skills",
