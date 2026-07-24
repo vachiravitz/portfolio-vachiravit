@@ -90,8 +90,8 @@ export const projects = [
   },
   {
     number: "03",
-    slug: "signal-analytics",
-    title: "Signal Analytics",
+    slug: "phishing",
+    title: "Phishing Website Detection",
     course: "Data Visualization",
     description: "A dashboard that translates noisy operational data into concise, actionable product insights.",
     responsibility: "Prepared the dataset, designed the information hierarchy, and developed interactive charts and filters.",
@@ -100,8 +100,8 @@ export const projects = [
     github: "https://github.com/",
     demo: "",
     figma: "",
-    documentation: "", // ตัวอย่าง: "/documents/projects/signal-analytics.pdf"
-    image: "",
+    documentation: "/images/projects/DataMining.pdf", // ตัวอย่าง: "/documents/projects/signal-analytics.pdf"
+    image: "/images/projects/datamine1.jpg",
     video: "",
     tone: "slate",
     featured: false,
@@ -121,8 +121,8 @@ export const projects = [
         { number: "03", title: "Actionable Findings", description: "Connects important signals with clear recommendations." },
       ],
       gallery: [
-        { image: "", caption: "Dashboard overview and key metrics.", wide: false, fit: "contain" },
-        { image: "", caption: "Interactive charts, filters, and detailed analysis.", wide: false, fit: "contain" },
+        { image: "/images/projects/datamine2.jpg", caption: "Dashboard overview and key metrics.", wide: false, fit: "contain" },
+        { image: "/images/projects/datamine3.jpg", caption: "Interactive charts, filters, and detailed analysis.", wide: false, fit: "contain" },
       ],
       collaborators: [],
       recognition: { title: "", organization: "" },
