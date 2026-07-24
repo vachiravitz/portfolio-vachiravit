@@ -29,20 +29,20 @@
 
 /* ==================== HOME / HERO ==================== */
 #top {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #fffdf8;
+  --section-heading-color: #18243a;
+  --section-text-color: #596579;
+  --section-accent-color: #3d62a8;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== ABOUT ==================== */
 #about {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #f3fbfa;
+  --section-heading-color: #163c42;
+  --section-text-color: #526f72;
+  --section-accent-color: #25827e;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
@@ -51,7 +51,7 @@
 #about .education-section {
   --education-heading-color: #0b2b69;
   --education-text-color: #2448b6;
-  --education-card-background: #f7f8fc;
+  --education-card-background: #f7f4ef;
   --education-pill-background: #ffffff;
   --education-heading-font: var(--theme-heading-font);
   --education-body-font: var(--theme-body-font);
@@ -59,10 +59,10 @@
 
 /* ==================== PROJECTS ==================== */
 #projects {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #fff6ef;
+  --section-heading-color: #4b2d25;
+  --section-text-color: #725e57;
+  --section-accent-color: #b65b38;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
@@ -71,54 +71,54 @@
  * เปลี่ยนค่าในส่วนนี้ จะเปลี่ยนเฉพาะ Skills เท่านั้น
  */
 #skills {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #f2f7ff;
+  --section-heading-color: #193b70;
+  --section-text-color: #5a6d8a;
+  --section-accent-color: #3568b8;
 
-  --skills-category-color: #0b2b69; /* Technical / Design / Soft */
+  --skills-category-color: #193b70; /* Technical / Design / Soft */
   --skills-item-color: #355783;     /* Python, Figma, Leadership */
-  --skills-bullet-color: #2448b6;   /* จุดนำหน้ารายการ */
+  --skills-bullet-color: #5b8bd1;   /* จุดนำหน้ารายการ */
   --skills-heading-font: "Tahoma", var(--theme-heading-font);
   --skills-item-font: var(--theme-body-font);
 }
 
 /* ==================== ACTIVITIES ==================== */
 #activities {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #f8f4ff;
+  --section-heading-color: #49356c;
+  --section-text-color: #6d6180;
+  --section-accent-color: #7a58ae;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== EXPERIENCE ==================== */
 #experience {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #f1faf5;
+  --section-heading-color: #254d3f;
+  --section-text-color: #5b746b;
+  --section-accent-color: #398267;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== CERTIFICATES ==================== */
 #certificates {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #fffaf0;
+  --section-heading-color: #59451e;
+  --section-text-color: #786d54;
+  --section-accent-color: #a87821;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== CONTACT ==================== */
 #contact {
-  --section-background: #ffffff;
-  --section-heading-color: #0b2b69;
-  --section-text-color: #5f6f91;
-  --section-accent-color: #2448b6;
+  --section-background: #edf4ff;
+  --section-heading-color: #173760;
+  --section-text-color: #5a6c83;
+  --section-accent-color: #285f9f;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
@@ -321,14 +321,14 @@ body {
 
 /* Compact project preview; details open only when requested */
 #projects .project-card {
-  border-color: rgba(36, 72, 182, .16);
+  border-color: rgba(182, 91, 56, .16);
   background: rgba(255, 255, 255, .82);
-  box-shadow: 0 18px 45px rgba(24, 48, 104, .07);
+  box-shadow: 0 18px 45px rgba(97, 54, 35, .07);
 }
 
 #projects .project-details {
   margin-top: 24px;
-  border-top: 1px solid rgba(36, 72, 182, .17);
+  border-top: 1px solid rgba(182, 91, 56, .17);
 }
 
 #projects .project-details summary {
@@ -346,8 +346,8 @@ body {
 #projects .project-details summary::-webkit-details-marker { display: none; }
 #projects .project-details summary svg { transition: transform .2s ease; }
 #projects .project-details[open] summary svg { transform: rotate(45deg); }
-#projects .project-facts > div { border-left-color: #6f8bd2; background: #f7f9fe; }
-#projects .project-links { border-top-color: rgba(36, 72, 182, .15); }
+#projects .project-facts > div { border-left-color: #d98c6e; background: #fff9f5; }
+#projects .project-links { border-top-color: rgba(182, 91, 56, .15); }
 
 #projects .project-details-link {
   display: flex;
@@ -356,7 +356,7 @@ body {
   gap: 16px;
   margin-top: 24px;
   padding: 18px 0 2px;
-  border-top: 1px solid rgba(36, 72, 182, .17);
+  border-top: 1px solid rgba(182, 91, 56, .17);
   color: var(--section-accent-color);
   font-size: 12px;
   font-weight: 750;

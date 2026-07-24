@@ -54,7 +54,7 @@ export const projects = [
     slug: "findty",
     title: "Findty Mobile App",
     course: "Web Application Development",
-    description: "FindTy is a mobile application that helps online gamers discover and connect with gaming parties in real-time, featuring built-in room creation, live chat, and a player review system.",
+    description: "FindTy is a mobile application that helps online gamers discover and connect with gaming parties in real-time.",
     responsibility: "Built reusable UI components, integrated a map API, and created responsive search and place-detail experiences.",
     outcome: "Completed the end-to-end user flow from discovery to saved place collections.",
     tags: ["Flutter", "Firebase", "Dart"],

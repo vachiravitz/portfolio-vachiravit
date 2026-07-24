@@ -7,7 +7,7 @@ export const activities = [
     organization: "Computer Science",
     role: "",
     description: "Explore the various booths and learn about their operations, including the Cyber ​​activities.",
-    result: "Supported 40+ participants",
+    result: "Knowledge from professional",
     image: "/images/activities/activity2.jpg",
   },
   {
