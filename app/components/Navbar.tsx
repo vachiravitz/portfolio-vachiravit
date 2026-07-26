@@ -9,6 +9,9 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState("");
+  const mobileItems = [...navItems, { label: "Contact", href: "#contact" }];
+  const activeIndex = Math.max(0, mobileItems.findIndex((item) => item.href === activeHref));
+  const activeItem = mobileItems[activeIndex];
 
   useEffect(() => {
     let frame = 0;
@@ -50,6 +53,21 @@ export function Navbar() {
           <small>PORTFOLIO / 2026</small>
         </span>
       </a>
+
+      <div className="mobile-current-section" aria-label={`Current section: ${activeItem.label}`}>
+        <span>{String(activeIndex + 1).padStart(2, "0")}</span>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.strong
+            key={activeItem.href}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.16 }}
+          >
+            {activeItem.label}
+          </motion.strong>
+        </AnimatePresence>
+      </div>
 
       <nav className="desktop-nav" aria-label="Main navigation">
         {navItems.map((item) => (
