@@ -1,19 +1,17 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowDown, ArrowDownToLine } from "lucide-react";
 import { profile } from "../data";
 
 export function Hero() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <section id="top" className="hero section-shell">
       <div className="hero-grid">
         <motion.div
           className="hero-copy"
-          initial={reduceMotion ? false : { opacity: 0, y: 32 }}
-          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="availability-pill"><span className="status-dot" />{profile.availability}</div>
@@ -31,8 +29,8 @@ export function Hero() {
 
         <motion.div
           className="portrait-wrap"
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
-          animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
+          initial={false}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="portrait-card">
@@ -53,8 +51,8 @@ export function Hero() {
 
       <motion.div
         className="hero-meta"
-        initial={reduceMotion ? false : { opacity: 0 }}
-        animate={reduceMotion ? undefined : { opacity: 1 }}
+        initial={false}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.45 }}
       >
         <div><span>BASED IN</span><strong>{profile.location}</strong></div>
