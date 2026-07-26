@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, AtSign, BriefcaseBusiness, Code2, ExternalLink, Mail, Phone, type LucideIcon } from "lucide-react";
+import { ArrowBigDown, ArrowUpRight, AtSign, BriefcaseBusiness, Code2, ExternalLink, Mail, MapPin , Phone, type LucideIcon } from "lucide-react";
 import { profile } from "../data";
 import { MotionReveal } from "../components/MotionReveal";
 
@@ -16,12 +16,12 @@ export function Contact() {
       <MotionReveal>
         <div className="contact-panel">
           <div className="contact-grid" />
-          <div className="contact-topline"><span>07 / CONTACT</span><span className="status-text">Available for a conversation</span></div>
+          <div className="contact-topline"><span>07 / CONTACT</span><span className="status-text">Available for a contract</span></div>
           <div className="contact-main">
-            <div className="contact-intro">
-              <p>Have an opportunity, a project, or just want to say hello?</p>
-              <h2>Let&apos;s connect.</h2>
-            </div>
+          <div className="contact-intro" style={{ alignSelf: 'flex-start' }}>
+            <p>If you are interested in the front-end role, please feel free to get in touch. Thank you for reading this far.</p>
+            <h2>Let&apos;s connect.</h2>
+          </div>
             <div className="contact-direct-grid">
               <a className="contact-channel" href={`mailto:${profile.email}`}>
                 <span className="contact-channel-icon"><Mail size={21} /></span>
@@ -35,6 +35,11 @@ export function Contact() {
                   <ArrowUpRight size={19} />
                 </a>
               ) : null}
+            <div className="contact-channel">
+              <span className="contact-channel-icon"><MapPin size={21} /></span>
+              <span><small>Location</small><strong>Pathum Tani, Thailand</strong></span>
+              <span className="font-bold text-sm" style={{ marginLeft: 'auto' }}>TH</span>
+            </div>
             </div>
           </div>
           <div className="social-grid">

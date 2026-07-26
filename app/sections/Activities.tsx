@@ -11,7 +11,7 @@ export function Activities() {
       <MotionReveal>
         <SectionHeading
           index="04"
-          eyebrow="Activities & contributions / กิจกรรม"
+          eyebrow="Activities & contributions"
           title="Learning happens everywhere."
           description="Competitions, clubs, volunteer work, seminars, and the result of each activity."
         />

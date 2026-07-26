@@ -38,7 +38,7 @@ function ProjectVisual({ tone, index }: { tone: string; index: number }) {
 export function Projects() {
   return (
     <section id="projects" className="section-shell content-section">
-      <MotionReveal><SectionHeading index="02" eyebrow="Projects / ผลงาน" title="Projects built with purpose." description="A quick look at selected work. Open each project to see my role, process, and result." /></MotionReveal>
+      <MotionReveal><SectionHeading index="03" eyebrow="Projects" title="Projects built with purpose." description="A quick look at selected work. Open each project to see my role, process, and result." /></MotionReveal>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <MotionReveal key={project.title} className={project.featured ? "project-featured" : ""} delay={(index % 2) * 0.08}>
@@ -47,7 +47,10 @@ export function Projects() {
                 <div className={`project-visual visual-${project.tone}`}><img className="content-image" src={project.image} alt={`Screenshot of ${project.title}`} loading="lazy" /><span className="visual-index">0{index + 1}</span></div>
               ) : <ProjectVisual tone={project.tone} index={index} />}
               <div className="project-body">
-                <div className="project-number">PROJECT / {project.number} · {project.course}</div>
+                <div className="project-number">
+                  <span>PROJECT / {project.number}</span>
+                  <strong>· {project.course}</strong>
+                </div>
                 <h3>{project.title}</h3><p>{project.description}</p>
                 <ul className="tag-list">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
                 <a className="project-details-link" href={`/projects/${project.slug}`}>

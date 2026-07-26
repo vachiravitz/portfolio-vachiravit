@@ -46,8 +46,7 @@ export function Hero() {
                 <div className="portrait-core" role="img" aria-label={`Profile placeholder for ${profile.name}`}><span>{profile.initials}</span></div>
               </>
             )}
-            <div className="portrait-note note-top">CS / PORTFOLIO</div>
-            <div className="portrait-note note-bottom"><span className="status-dot" /> {profile.location.toUpperCase()}</div>
+            {/* <div className="portrait-note note-bottom"><span className="status-dot" /> {profile.location.toUpperCase()}</div> */}
           </div>
         </motion.div>
       </div>
@@ -59,8 +58,8 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.45 }}
       >
         <div><span>BASED IN</span><strong>{profile.location}</strong></div>
-        <div><span>CURRENTLY EXPLORING</span><strong>{profile.currentFocus}</strong></div>
-        <div><span>STATUS</span><strong className="status-text">Ready to build</strong></div>
+        <div><span>CURRENTLY EXPLORING</span><strong className="status-text">{profile.currentFocus}</strong></div>
+        <div><span>STATUS</span><strong className="status-text">Ready to contract</strong></div>
         <a href="#about" aria-label="Scroll to about section"><ArrowDown size={18} /></a>
       </motion.div>
     </section>

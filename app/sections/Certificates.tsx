@@ -9,7 +9,7 @@ import { SectionHeading } from "../components/SectionHeading";
 export function Certificates() {
   return (
     <section id="certificates" className="section-shell content-section">
-      <MotionReveal><SectionHeading index="06" eyebrow="Certifications / ใบรับรอง" title="Proof of progress, not the finish line." /></MotionReveal>
+      <MotionReveal><SectionHeading index="06" eyebrow="Certifications " title="Proof of progress, not the finish line." /></MotionReveal>
       <div className="certificate-grid">
         {certificates.map((certificate, index) => {
           const cardContent = (

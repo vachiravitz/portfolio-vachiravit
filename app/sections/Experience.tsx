@@ -8,7 +8,7 @@ import { SectionHeading } from "../components/SectionHeading";
 export function Experience() {
   return (
     <section id="experience" className="section-shell content-section">
-      <MotionReveal><SectionHeading index="05" eyebrow="Work experience / ประสบการณ์" title="Experience that shaped how I work." description="Internships, part-time work, freelance work, or substantial team projects can all live here." /></MotionReveal>
+      <MotionReveal><SectionHeading index="05" eyebrow="Work experience" title="Work Experience" description="Internships, part-time work, freelance work, or substantial team projects can all live here." /></MotionReveal>
       <div className="experience-list">
         {workExperience.map((experience, index) => (
           <MotionReveal key={`${experience.company}-${experience.role}`} delay={index * 0.06}>

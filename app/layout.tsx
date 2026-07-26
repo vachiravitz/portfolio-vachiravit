@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: baseUrl,
     title: {
-      default: "Your Name — Creative Developer",
+      default: "Vachiravit Tuntipoonpon — Creative Developer",
       template: "%s | Your Name",
     },
     description:
@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Designing Systems That Feel Human",
       description: "Computer Science × Creative Development",
       type: "website",
-      images: [{ url: socialImage, width: 1536, height: 1024, alt: "Your Name creative developer portfolio" }],
+      images: [{ url: socialImage, width: 1536, height: 1024, alt: "Vachiravit Tuntipoonpon creative developer portfolio" }],
     },
     twitter: {
       card: "summary_large_image",
