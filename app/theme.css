@@ -622,6 +622,20 @@ body {
 }
 
 @media (max-width: 760px) {
+  #top,
+  .content-section,
+  .contact-section {
+    background: var(--section-background);
+    box-shadow: 0 0 0 100vmax var(--section-background);
+    clip-path: inset(0 -100vmax);
+  }
+
+  #top::before,
+  .content-section::before,
+  .contact-section::before {
+    display: none;
+  }
+
   .site-header {
     border-color: var(--line);
     background: rgba(17, 22, 29, .94);
