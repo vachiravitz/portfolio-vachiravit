@@ -14,7 +14,7 @@ export const profile = {
   currentFocus: "Frontend & Tester ",
   resumeUrl: "/resume.pdf",
   // ใส่รูปที่ public/profile.png แล้วเปลี่ยนเป็น "/profile.png"
-  photo: "public/profile.jpg",
+  photo: "/profile.jpg",
   socials: [
     { label: "GitHub", href: "https://github.com/vachiravitz", icon: "Github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/vachiravit-tuntipoonpon-7a2720411/", icon: "Linkedin" },
