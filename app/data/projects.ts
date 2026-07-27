@@ -61,7 +61,7 @@ export const projects = [
     github: "https://github.com/vachiravitz/findty_v3.git",
     demo: "",
     figma: "",
-    documentation: "/images/projects/FindTy.pdf",
+    documentation: "/images/projects/Findty.pdf",
     image: "/images/projects/findty1.jpg",
     video: "https://www.youtube-nocookie.com/embed/f78LjvoEWTc?autoplay=1&mute=1&loop=1&playlist=f78LjvoEWTc&controls=1&rel=0&playsinline=1",
     tone: "violet",
