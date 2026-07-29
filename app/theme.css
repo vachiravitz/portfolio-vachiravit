@@ -49,8 +49,8 @@
   --section-body-font: var(--theme-body-font);
 }
 
-/* ==================== ABOUT ==================== */
-#about {
+/* ==================== EDUCATION / ABOUT ==================== */
+#education {
   --section-background: #fbfaf6;
   --section-heading-color: #2d6d61;
   --section-text-color: #53606a;
@@ -60,7 +60,7 @@
 }
 
 /* ==================== EDUCATION ==================== */
-#about .education-section {
+#education .education-section {
   --education-heading-color: #0b2b69;
   --education-text-color: #2448b6;
   --education-card-background: #f7f4ef;
@@ -161,7 +161,7 @@ body {
 .site-header,
 .footer,
 #top,
-#about,
+#education,
 #projects,
 #skills,
 #activities,
@@ -185,7 +185,7 @@ body {
 }
 
 #top h1,
-#about .section-title-wrap h2,
+#education .section-title-wrap h2,
 #projects .section-title-wrap h2,
 #skills .section-title-wrap h2,
 #activities .section-title-wrap h2,
@@ -197,7 +197,7 @@ body {
 }
 
 #top .hero-kicker,
-#about .section-label span:first-child,
+#education .section-label span:first-child,
 #projects .section-label span:first-child,
 #skills .section-label span:first-child,
 #activities .section-label span:first-child,
@@ -208,7 +208,7 @@ body {
 }
 
 #top .hero-intro,
-#about .section-title-wrap p,
+#education .section-title-wrap p,
 #projects .section-title-wrap p,
 #skills .section-title-wrap p,
 #activities .section-title-wrap p,
@@ -220,29 +220,37 @@ body {
 }
 
 /* Education */
-#about .education-heading > span,
-#about .education-card h3 {
+#education .education-card h3 {
   color: var(--education-heading-color);
   font-family: var(--education-heading-font);
 }
 
-#about .education-card {
+#education .education-card {
   background: var(--education-card-background);
   font-family: var(--education-body-font);
 }
 
-#about .education-number,
-#about .education-period {
+#education .education-number,
+#education .education-period {
   background: var(--education-pill-background);
   color: var(--education-text-color) !important;
   font-family: var(--education-body-font) !important;
 }
 
-#about .education-card .education-degree,
-#about .education-card p,
-#about .education-card strong {
+#education .education-card .education-degree,
+#education .education-card p {
   color: var(--education-text-color);
   font-family: var(--education-body-font);
+}
+
+#education .education-gpa span {
+  color: var(--education-text-color);
+  font-family: var(--education-body-font);
+}
+
+#education .education-gpa strong {
+  color: var(--education-heading-color);
+  font-family: var(--education-heading-font);
 }
 
 /* Skills */

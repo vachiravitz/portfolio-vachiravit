@@ -4,7 +4,6 @@ export const education = [
     degree: "B.Sc. in Computer Science",
     school: "BANGKOK UNIVERSITY",
     faculty: "School of Information Technology and Innovation",
-    period: " 2023 ",
     highlights: [""],
     gpa: "GPA: 3.22",
   },
@@ -17,4 +16,3 @@ export const education = [
   //   gpa: "GPA: 3.75",
   // },
 ];
-

@@ -7,7 +7,7 @@ export const profile = {
   role: "Computer Science Student",
   intro:
     "I am a front-end developer passionate about creating intuitive and user-friendly interfaces that meet real needs. I specialize in translating complex requirements into simple, natural experiences. Performance is always my top priority. When I'm not writing code, I am constantly learning new things and seeking fresh inspiration for my designs",
-  email: "vachiravit.tunt@bumail.net",
+  email: "vachiravit.tunt@gmail.com",
   phone: "095-627-9484",
   location: "Pathum Tani, Thailand",
   availability: "Open to internships & collaborations",

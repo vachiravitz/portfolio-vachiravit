@@ -60,7 +60,7 @@ export function Hero() {
         <div><span>BASED IN</span><strong>{profile.location}</strong></div>
         <div><span>CURRENTLY EXPLORING</span><strong className="status-text">{profile.currentFocus}</strong></div>
         <div><span>STATUS</span><strong className="status-text">Ready to contract</strong></div>
-        <a href="#about" aria-label="Scroll to about section"><ArrowDown size={18} /></a>
+        <a href="#education" aria-label="Scroll to education section"><ArrowDown size={18} /></a>
       </motion.div>
     </section>
   );

@@ -1,7 +1,7 @@
-//import { About } from "../sections/About";
 import { Activities } from "../sections/Activities";
 import { Certificates } from "../sections/Certificates";
 import { Contact } from "../sections/Contact";
+import { Education } from "../sections/Education";
 import { Experience } from "../sections/Experience";
 import { Footer } from "../sections/Footer";
 import { Hero } from "../sections/Hero";
@@ -15,7 +15,7 @@ export function PortfolioPage() {
       <Navbar />
       <main>
         <Hero />
-        {/* <About /> */}
+        <Education />
         <Skills />
         <Projects />
         <Activities />

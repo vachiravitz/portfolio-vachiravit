@@ -47,7 +47,7 @@ documentation: "",
 | Section | ไฟล์ |
 | --- | --- |
 | หน้าหลัก | `app/sections/Hero.tsx` |
-| About และ Education | `app/sections/About.tsx` |
+| Education | `app/sections/Education.tsx` |
 | Projects | `app/sections/Projects.tsx` |
 | Skills | `app/sections/Skills.tsx` |
 | Activities | `app/sections/Activities.tsx` |
@@ -123,7 +123,7 @@ gallery: [
 
 ```tsx
 <Hero />
-<About />
+<Education />
 <Projects />
 <Skills />
 <Activities />
