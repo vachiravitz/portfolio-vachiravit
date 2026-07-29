@@ -1,4 +1,4 @@
-import { ArrowDownToLine, ArrowLeft, ArrowUpRight, ExternalLink, FileText } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ExternalLink, FileText } from "lucide-react";
 import type { Project } from "../data/projects";
 import { profile } from "../data/profile";
 
@@ -124,16 +124,6 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
           </div>
           {hasRecognition ? (
             <div className="case-final-block"><span>RECOGNITION</span><strong>{project.details.recognition.title}</strong><small>{project.details.recognition.organization}</small></div>
-          ) : null}
-          {project.documentation ? (
-            <div className="case-documentation">
-              <span><FileText size={20} />Project documentation</span>
-              <div className="case-documentation-actions">
-                <a href={project.documentation} download>
-                  Download PDF <ArrowDownToLine size={17} />
-                </a>
-              </div>
-            </div>
           ) : null}
         </section>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowDownToLine } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
 import { profile } from "../data";
 
 export function Hero() {
@@ -23,7 +23,9 @@ export function Hero() {
           <p className="hero-intro">{profile.intro}</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">View projects <ArrowDown size={17} /></a>
-            <a className="button button-secondary" href={profile.resumeUrl} download>Download resume <ArrowDownToLine size={17} /></a>
+            <a className="button button-secondary" href={profile.resumeUrl} target="_blank" rel="noreferrer">
+              View resume <FileText size={17} />
+            </a>
           </div>
         </motion.div>
 
