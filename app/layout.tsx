@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: baseUrl,
     title: {
-      default: "Vachiravit Tuntipoonpon — Creative Developer",
+      default: "Your Name — Creative Developer",
       template: "%s | Your Name",
     },
     description:

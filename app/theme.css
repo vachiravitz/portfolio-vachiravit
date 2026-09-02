@@ -11,7 +11,7 @@
 
 /* ==================== ทั้งเว็บไซต์ ==================== */
 :root {
-  --theme-page-background: #fbfaf6;
+  --theme-page-background: #f5c5e5;
   --theme-main-text: #172633;
   --theme-main-accent: #ff6b54;
   --ink: #172633;
@@ -71,7 +71,7 @@
 
 /* ==================== PROJECTS ==================== */
 #projects {
-  --section-background: #172c3f;
+  --section-background: #282b49;
   --section-heading-color: #fbfaf6;
   --section-text-color: #b7c2ca;
   --section-accent-color: #ff6b54;
