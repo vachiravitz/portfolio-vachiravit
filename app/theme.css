@@ -71,10 +71,10 @@
 
 /* ==================== PROJECTS ==================== */
 #projects {
-  --section-background: #282b49;
-  --section-heading-color: #fbfaf6;
-  --section-text-color: #b7c2ca;
-  --section-accent-color: #ff6b54;
+  --section-background: #9f92d1;
+  --section-heading-color: #050505;
+  --section-text-color: #050505;
+  --section-accent-color: #0e3a6d;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }

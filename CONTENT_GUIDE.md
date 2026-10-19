@@ -21,7 +21,6 @@
 - รูปโปรไฟล์: `public/profile.png`
 - Resume: `public/resume.pdf`
 - รูปโปรเจกต์: `public/images/projects`
-- เอกสาร PDF ของโปรเจกต์: `public/documents/projects`
 - รูปกิจกรรม: `public/images/activities`
 - รูปใบรับรอง: `public/images/certificates`
 
@@ -29,7 +28,6 @@
 
 ```ts
 image: "/images/projects/my-project.jpg",
-documentation: "/documents/projects/my-project.pdf",
 ```
 
 หากยังไม่มีรูปหรือลิงก์ ให้ใช้ค่าว่าง:
@@ -37,17 +35,14 @@ documentation: "/documents/projects/my-project.pdf",
 ```ts
 image: "",
 demo: "",
-documentation: "",
 ```
-
-เมื่อใส่ path ใน `documentation` ปุ่ม `Read project documentation` จะปรากฏในรายละเอียดโปรเจกต์ และเปิด PDF ในแท็บใหม่ หากยังไม่มีเอกสารให้ใช้ค่าว่าง `""` ปุ่มจะถูกซ่อนไว้อัตโนมัติ
 
 ## ไฟล์หน้าจอแต่ละ Section
 
 | Section | ไฟล์ |
 | --- | --- |
 | หน้าหลัก | `app/sections/Hero.tsx` |
-| Education | `app/sections/Education.tsx` |
+| About และ Education | `app/sections/About.tsx` |
 | Projects | `app/sections/Projects.tsx` |
 | Skills | `app/sections/Skills.tsx` |
 | Activities | `app/sections/Activities.tsx` |
@@ -58,64 +53,23 @@ documentation: "",
 
 หากต้องการแก้เฉพาะข้อความหรือข้อมูล ไม่จำเป็นต้องแก้ไฟล์ใน `app/sections` ให้แก้ไฟล์ใน `app/data` ก่อน
 
-## หน้า Project Case Study
+## สีและรูปแบบ
 
-ปุ่ม `Read project details` จะเปิดหน้าเฉพาะของแต่ละโปรเจกต์ เช่น `/projects/giewbu-ai-project`
-
-ข้อมูลทั้งหมดของหน้านี้แก้ใน `app/data/projects.ts` ภายใน `details` ของโปรเจกต์นั้น:
-
-- `slug` คือชื่อที่อยู่บน URL ใช้ตัวอักษรอังกฤษเล็กและ `-`
-- `headline` คือหัวข้อใหญ่ของ Case Study
-- `overviewLabel` คือคำเล็กเหนือหัวข้อ เช่น `OVERVIEW`
-- `highlight` คือป้ายสีเด่นเหนือ Overview เช่น `AWARD-WINNING AI PROJECT` หากไม่ใช้ให้ใส่ `""`
-- `overview` คือย่อหน้าอธิบายโปรเจกต์
-- `role` และ `roleDescription` คือบทบาทของคุณ
-- `features` คือความสามารถสำคัญ 3 ส่วน
-- `gallery` คือรูปเพิ่มเติมและคำบรรยาย
-- `collaborators` คือรายชื่อสมาชิก
-- `recognition` คือรางวัลหรือการยอมรับ
-- `documentation` คือ path ของเอกสาร PDF
-
-ตัวอย่างการใส่รูปเพิ่มเติม:
-
-```ts
-gallery: [
-  {
-    image: "/images/projects/giewbu-summary.jpg",
-    caption: "Summary insight and conversation analysis interface.",
-    wide: false,
-    fit: "contain",
-  },
-],
-```
-
-กำหนด `wide: false` สำหรับรูปขนาดปกติสองคอลัมน์ และใช้ `wide: true` เมื่อต้องการให้รูปกินพื้นที่เต็มแถว
-
-- `fit: "cover"` ทำให้รูปเต็มช่อง ไม่มีพื้นที่สีขาว แต่อาจตัดขอบรูปเล็กน้อย
-- `fit: "contain"` แสดงรูปครบทั้งภาพ แต่อาจมีพื้นที่ว่างหากสัดส่วนรูปไม่ตรงกับช่อง
-
-## สีและฟอนต์
-
-แก้ที่ `app/theme.css` ไฟล์เดียว โดยในไฟล์จะแยกส่วนไว้ให้แล้ว เช่น:
-
-- `ทั้งเว็บไซต์` เปลี่ยนสีพื้นหลังและฟอนต์หลักทั้งเว็บ
-- `EDUCATION` เปลี่ยนเฉพาะการศึกษา
-- `SKILLS` เปลี่ยนเฉพาะ Technical / Design / Soft Skills
-- `PROJECTS`, `ACTIVITIES`, `EXPERIENCE` เปลี่ยนเฉพาะส่วนนั้น
-
-ตัวอย่าง หากต้องการเปลี่ยนเฉพาะ Skills ให้ค้นหา `SKILLS` แล้วแก้:
+แก้ที่ `app/globals.css` แล้วค้นหา:
 
 ```css
-#skills {
-  --skills-category-color: #0b2b69;
-  --skills-item-color: #2448b6;
-  --skills-bullet-color: #2448b6;
-  --skills-heading-font: "Arial", sans-serif;
-  --skills-item-font: "Tahoma", sans-serif;
-}
+/* White minimal theme */
 ```
 
-สีใช้รหัส HEX เช่น `#000000` และฟอนต์ใส่ชื่อไว้ในเครื่องหมายคำพูด เช่น `"Tahoma"` หากแก้แล้วกด `Ctrl+S` หน้าเว็บจะอัปเดตทันที
+สีหลักอยู่ในตัวแปร:
+
+```css
+:root {
+  --ink: #0b2b69;
+  --page: #ffffff;
+  --blue: #2448b6;
+}
+```
 
 ## ลำดับ Section
 
@@ -123,7 +77,7 @@ gallery: [
 
 ```tsx
 <Hero />
-<Education />
+<About />
 <Projects />
 <Skills />
 <Activities />
