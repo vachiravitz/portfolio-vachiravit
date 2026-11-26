@@ -11,70 +11,70 @@
 
 /* ==================== ทั้งเว็บไซต์ ==================== */
 :root {
-  --theme-page-background: #f5c5e5;
-  --theme-main-text: #172633;
-  --theme-main-accent: #ff6b54;
-  --ink: #172633;
-  --muted: #5f6b73;
-  --dim: #030303;
-  --page: #fbfaf6;
-  --panel: #ffffff;
-  --panel-2: #f4f0e7;
-  --line: rgba(17, 40, 60, .17);
-  --line-strong: rgba(17, 40, 60, .3);
-  --blue: #7ea6d8;
-  --violet: #9a88b5;
-  --green: #55a386;
+  --theme-page-background: #090f17;
+  --theme-main-text: #edf5f8;
+  --theme-main-accent: #59dece;
+  --ink: #edf5f8;
+  --muted: #adbdc9;
+  --dim: #8fa4b3;
+  --page: #090f17;
+  --panel: #111d29;
+  --panel-2: #172634;
+  --line: rgba(150, 195, 210, .19);
+  --line-strong: rgba(150, 195, 210, .32);
+  --blue: #59dece;
+  --violet: #a7b8ee;
+  --green: #59dece;
   --theme-heading-font: var(--font-geist-sans), "Leelawadee UI", Arial, sans-serif;
   --theme-body-font: var(--font-geist-sans), "Leelawadee UI", Arial, sans-serif;
 }
 
 /* ==================== เมนูด้านบน ==================== */
 .site-header {
-  --section-background: #fbfaf6;
-  --section-heading-color: #11283c;
-  --section-text-color: #5f6b73;
-  --section-accent-color: #ff6b54;
+  --section-background: #090f17;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== HOME / HERO ==================== */
 #top {
-  --section-background: #e9e0c2;
-  --section-heading-color: #080808;
-  --section-text-color: #53606a;
-  --section-accent-color: #332617;
+  --section-background: #0d1722;
+  --section-heading-color: #f4fafb;
+  --section-text-color: #b4c4cf;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== EDUCATION / ABOUT ==================== */
 #education {
-  --section-background: #fbfaf6;
-  --section-heading-color: #2d6d61;
-  --section-text-color: #53606a;
-  --section-accent-color: #ff6b54;
+  --section-background: #101c28;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== EDUCATION ==================== */
 #education .education-section {
-  --education-heading-color: #0b2b69;
-  --education-text-color: #2448b6;
-  --education-card-background: #f7f4ef;
-  --education-pill-background: #ffffff;
+  --education-heading-color: #edf5f8;
+  --education-text-color: #adbdc9;
+  --education-card-background: #172634;
+  --education-pill-background: #223547;
   --education-heading-font: var(--theme-heading-font);
   --education-body-font: var(--theme-body-font);
 }
 
 /* ==================== PROJECTS ==================== */
 #projects {
-  --section-background: #9f92d1;
-  --section-heading-color: #050505;
-  --section-text-color: #050505;
-  --section-accent-color: #0e3a6d;
+  --section-background: #0b141e;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
@@ -83,64 +83,64 @@
  * เปลี่ยนค่าในส่วนนี้ จะเปลี่ยนเฉพาะ Skills เท่านั้น
  */
 #skills {
-  --section-background: #e7d7ee;
-  --section-heading-color: #2d273b;
-  --section-text-color: #080e0c;
-  --section-accent-color: #0e1d2b;
+  --section-background: #101c28;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
 
-  --skills-category-color: #11283c; /* Technical / Design / Soft */
-  --skills-item-color: #060e0c;     /* Python, Figma, Leadership */
-  --skills-bullet-color: #5b8bd1;   /* จุดนำหน้ารายการ */
+  --skills-category-color: #edf5f8;
+  --skills-item-color: #d5e3eb;
+  --skills-bullet-color: #59dece;
   --skills-heading-font: "Tahoma", var(--theme-heading-font);
   --skills-item-font: var(--theme-body-font);
 }
 
 /* ==================== ACTIVITIES ==================== */
 #activities {
-  --section-background: #dce7f3;
-  --section-heading-color: #274c68;
-  --section-text-color: #536879;
-  --section-accent-color: #d85643;
+  --section-background: #0b141e;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== EXPERIENCE ==================== */
 #experience {
-  --section-background: #fbfaf6;
-  --section-heading-color: #2f6f61;
-  --section-text-color: #5f6b73;
-  --section-accent-color: #ff6b54;
+  --section-background: #101c28;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== CERTIFICATES ==================== */
 #certificates {
-  --section-background: #f1e7d7;
-  --section-heading-color: #765a25;
-  --section-text-color: #6d6559;
-  --section-accent-color: #d85b46;
+  --section-background: #0b141e;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== CONTACT ==================== */
 #contact {
-  --section-background: #ebc5b4;
-  --section-heading-color: #0a0908;
-  --section-text-color: #000000;
-  --section-accent-color: #040505;
+  --section-background: #11212d;
+  --section-heading-color: #f4fafb;
+  --section-text-color: #b4c4cf;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
 
 /* ==================== FOOTER ==================== */
 .footer {
-  --section-background: #ffffff;
-  --section-heading-color: #ffffff;
-  --section-text-color: #050505;
-  --section-accent-color: #ffffff;
+  --section-background: #090f17;
+  --section-heading-color: #edf5f8;
+  --section-text-color: #adbdc9;
+  --section-accent-color: #59dece;
   --section-heading-font: var(--theme-heading-font);
   --section-body-font: var(--theme-body-font);
 }
@@ -870,4 +870,101 @@ body {
     background: rgba(76, 151, 250, 0.1);
     color: #c94f3e;
   }
+}
+
+/* Security palette: graphite surfaces, restrained cyan signals. */
+.site-header.is-scrolled { background: rgba(9, 15, 23, .94); box-shadow: 0 12px 32px rgba(0, 0, 0, .28); }
+.brand-mark, .button-secondary { background: #172634; color: var(--ink); }
+.desktop-nav a:hover, .hero-meta > a:hover, .button-secondary:hover { background: rgba(89, 222, 206, .1); color: var(--ink); }
+.site-header .desktop-nav a.is-active, .site-header .nav-cta.is-active { border-color: rgba(89, 222, 206, .35); background: rgba(89, 222, 206, .12); color: #78eddf; }
+.status-dot { background: #59dece; box-shadow: 0 0 0 4px rgba(89, 222, 206, .13); }
+.button-primary { border-color: #59dece; background: #59dece; color: #09141a; }
+.button-primary:hover { background: #8af4e6; }
+#top .hero-meta strong { color: #d5e5ed; }
+.portrait-card { border-color: var(--line); background: #172634; }
+.portrait-grid { background-image: linear-gradient(rgba(89, 222, 206, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(89, 222, 206, .06) 1px, transparent 1px); }
+.detail-card { border-color: var(--line); background: #172634; }
+.detail-card strong { color: #d5e5ed; }
+.statement-mark { color: #25404c; }
+#skills .skill-group, #activities .activity-card, #experience .experience-card, #certificates .certificate-card { border-color: var(--line); background: #172634; box-shadow: none; }
+#skills .skill-group:hover, #activities .activity-card:hover, #certificates .certificate-card-link:hover { border-color: rgba(89, 222, 206, .46); background: #1c3040; }
+#skills .skill-list li, #experience .tag-list li { border-color: var(--line); background: #1d3040; color: #d5e5ed; }
+#skills .skill-icon { border-color: var(--line); background: #233748; }
+#projects .project-card { border-color: var(--line); background: #142331; }
+#projects .project-card:hover { border-color: rgba(89, 222, 206, .5); background: #1a2d3b; box-shadow: 9px 10px rgba(89, 222, 206, .12); }
+#projects .tag-list li { border-color: var(--line); color: #d5e5ed; }
+#projects .project-number strong, #projects .project-featured .project-number strong { background: #59dece; color: #09141a; }
+#projects .project-details { border-color: var(--line); }
+#experience .experience-side { background: #1c3040; }
+#contact .contact-panel, #contact .contact-channel, #contact .social-grid a, #contact .contact-topline, #contact .social-grid { border-color: var(--line); }
+#contact .contact-channel, #contact .social-grid a { background: #172634; }
+#contact .contact-channel:hover, #contact .social-grid a:hover { border-color: rgba(89, 222, 206, .48); background: #1c3040; color: var(--ink); }
+#contact .contact-channel-icon { background: rgba(89, 222, 206, .12); color: #59dece; }
+#contact .social-grid a, #contact .social-grid a strong, #contact .social-grid a small { color: #d5e5ed; }
+@media (max-width: 760px) {
+  .site-header { background: rgba(9, 15, 23, .96); }
+  .menu-button, .mobile-nav { border-color: var(--line); background: #172634; color: var(--ink); }
+  .site-header .mobile-nav a.is-active { background: rgba(89, 222, 206, .12); color: #78eddf; }
+}
+
+/* Readable light variant: cool white surfaces with a technical teal accent. */
+:root {
+  --theme-page-background: #f3f7f8;
+  --theme-main-text: #142630;
+  --theme-main-accent: #087d79;
+  --ink: #142630;
+  --muted: #425b68;
+  --dim: #5a707b;
+  --page: #f3f7f8;
+  --panel: #ffffff;
+  --panel-2: #eaf2f4;
+  --line: rgba(24, 65, 78, .17);
+  --line-strong: rgba(24, 65, 78, .29);
+  --blue: #087d79;
+  --violet: #5464a8;
+  --green: #087d79;
+}
+.site-header, #top, #education, #projects, #skills, #activities, #experience, #certificates, #contact, .footer {
+  --section-heading-color: #142630;
+  --section-text-color: #425b68;
+  --section-accent-color: #087d79;
+}
+.site-header, .footer { --section-background: #f3f7f8; }
+#top { --section-background: #eaf3f5; }
+#education, #skills, #experience { --section-background: #ffffff; }
+#projects, #activities, #certificates { --section-background: #f0f5f7; }
+#contact { --section-background: #e7f1f2; }
+#education .education-section {
+  --education-heading-color: #142630;
+  --education-text-color: #425b68;
+  --education-card-background: #f0f5f7;
+  --education-pill-background: #ffffff;
+}
+#skills {
+  --skills-category-color: #142630;
+  --skills-item-color: #27414d;
+  --skills-bullet-color: #087d79;
+}
+.site-header.is-scrolled, .site-header { background: rgba(243, 247, 248, .96); }
+.brand-mark, .button-secondary, .portrait-card, .detail-card { background: #ffffff; color: var(--ink); }
+.detail-card strong, #top .hero-meta strong { color: #27414d; }
+.statement-mark { color: #cbdde1; }
+.portrait-grid { background-image: linear-gradient(rgba(8, 125, 121, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(8, 125, 121, .06) 1px, transparent 1px); }
+.desktop-nav a:hover, .hero-meta > a:hover, .button-secondary:hover { background: #e2eff0; color: var(--ink); }
+.site-header .desktop-nav a.is-active, .site-header .nav-cta.is-active { border-color: rgba(8, 125, 121, .3); background: #dceeed; color: #075c59; }
+.status-dot { background: #087d79; box-shadow: 0 0 0 4px rgba(8, 125, 121, .12); }
+.button-primary { border-color: #126d70; background: #126d70; color: #ffffff; }
+.button-primary:hover { background: #0c5558; }
+#skills .skill-group, #activities .activity-card, #experience .experience-card, #certificates .certificate-card, #projects .project-card { border-color: var(--line); background: #ffffff; box-shadow: 0 10px 30px rgba(20, 38, 48, .05); }
+#skills .skill-group:hover, #activities .activity-card:hover, #certificates .certificate-card-link:hover, #projects .project-card:hover { border-color: rgba(8, 125, 121, .4); background: #ffffff; box-shadow: 0 12px 32px rgba(20, 38, 48, .09); }
+#skills .skill-list li, #experience .tag-list li, #projects .tag-list li { border-color: var(--line); background: #eaf3f5; color: #27414d; }
+#skills .skill-icon, #experience .experience-side, #contact .contact-channel, #contact .social-grid a { background: #f0f5f7; }
+#projects .project-number strong, #projects .project-featured .project-number strong { background: #087d79; color: #ffffff; }
+#contact .contact-channel:hover, #contact .social-grid a:hover { border-color: rgba(8, 125, 121, .4); background: #ffffff; color: var(--ink); }
+#contact .contact-channel-icon { background: #dceeed; color: #087d79; }
+#contact .social-grid a, #contact .social-grid a strong, #contact .social-grid a small { color: #27414d; }
+@media (max-width: 760px) {
+  .site-header { background: rgba(243, 247, 248, .97); }
+  .menu-button, .mobile-nav { border-color: var(--line); background: #ffffff; color: var(--ink); }
+  .site-header .mobile-nav a.is-active { background: #dceeed; color: #075c59; }
 }

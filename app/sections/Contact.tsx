@@ -19,7 +19,7 @@ export function Contact() {
           <div className="contact-topline"><span>07 / CONTACT</span><span className="status-text">Available for a contract</span></div>
           <div className="contact-main">
           <div className="contact-intro" style={{ alignSelf: 'flex-start' }}>
-            <p>If you are interested in the Front-end or Developer role, please feel free to get in touch. Thank you for reading this far.</p>
+            <p>If you are interested in the System Security role, please feel free to get in touch. Thank you for reading this far.</p>
             <h2>Let&apos;s connect.</h2>
           </div>
             <div className="contact-direct-grid">
